@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'f1';
+    src: url('f1-secuencia-quad-ffp-webfont.woff2') format('woff2'),
+         url('f1-secuencia-quad-ffp-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.carDisplay {
+    border: 4px solid black;
+    border-radius: 3px;
+    margin: 10px;
+    border-top-right-radius: 15px;
+}
+
+.carDisplay:hover {
+    border: 4px solid #d18022;
+}
+
+body {
+    text-align: center;
+    font-family: 'f1';
+}
+
+p{
+    font-size: 19px;
+}
+
+h2, footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+    text-indent: 0;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.rule {
+    width: 800px;
+    display: inline-block;
+    margin: 10px;
+    margin: auto;
+}
+
+.rule canvas, .rule2 canvas{
+    width: 780px;
+    border: 2px solid black;
+}
+
+.rule2 {
+    display: inline-block;
+    margin: 10px;
+    margin: auto;
+}
+
+.rule2 #dash{
+    width: 1000px;
+    height: 300px;
+}

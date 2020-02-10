@@ -1,0 +1,109 @@
+/*Repris et adapté par Bruno Mascret de http://dmouronval.developpez.com/tutoriels/html/formulaires-html5/
+ * Les trois auteurs et traducteur
+ * 
+ * Jan Kleinert * 
+ * Traducteur : Didier Mouronval
+ * Bovino
+ * 
+ * Licence creative commons By
+ * http://creativecommons.org/licenses/by/3.0/deed.fr
+ */
+		h1{
+				text-align: center;
+				font-size: 110%;
+		}
+		
+		body{
+		  background-image: url(img/background.png);
+		  font-family: 'Open Sans',sans-serif;
+		  font-weight: 400;
+		  font-size: 100%;
+		  
+		}
+		
+		ul{
+			padding:0;
+			margin:0;
+			margin-left:10%;
+			margin-right:10%;
+			width:80%;
+		}
+		
+		li{
+				list-style:none;
+				padding:0;
+				margin:0;
+		
+				min-width:220px;
+				margin-left:20%;
+				margin-right:20%;
+				width:60%;
+		}
+		
+		:invalid { 
+		  background-color: #F0DDDD;
+		  border-color: #e88;
+		  -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+		  -moz-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+		  -o-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+		  -ms-box-shadow: 0 0 5px rbba(255, 0, 0, .8);
+		  box-shadow:0 0 5px rgba(255, 0, 0, .8);
+		}
+
+		:required {
+		  border-color: #88a;
+		  -webkit-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+		  -moz-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+		  -o-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+		  -ms-box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+		  box-shadow: 0 0 5px rgba(0, 0, 255, .5);
+		}
+
+		form {
+		  width:30%;
+		  
+		  min-width:350px;
+		  margin: 1% auto;
+		  padding: 1%;
+		  
+		}
+
+		input {
+		  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		  border:1px solid #ccc;
+		  font-size:20px;
+		  width:28%;
+		  
+		  min-width:250px;
+		  min-height:30px;
+		  display:block;
+		  margin-bottom:3%;
+		  padding-bottom:1%;
+		  margin-top:1%;
+		  outline: none;
+
+		  -webkit-border-radius:5px;
+		  -moz-border-radius:5px;
+		  -o-border-radius:5px;
+		  -ms-border-radius:5px;
+		  border-radius:5px;
+		}
+
+		input[type=submit] {
+		  background:none;
+		  padding:10px;
+		  cursor: pointer;
+		}
+		
+		label{
+		  cursor: pointer;
+		  width: 28%;
+		  min-width:250px;
+		}
+		
+		footer{
+				margin-top: 2%;
+				font-style: italic;
+				font-size: 80%;
+				text-align: center;
+		}

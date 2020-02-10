@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+}
+
+canvas{
+    border: 2px solid black;
+}
+
+.control{
+    display: inline-block;
+    width: 160px;
+}
+
+#s{
+    background: rgba(0, 0, 0, 0.32);
+}

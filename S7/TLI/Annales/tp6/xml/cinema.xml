@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cinemas>
+	<cinema num="1">
+			<nom>Utopia</nom>
+			<adresse>place Camille Julian</adresse>
+			<ville>Bordeaux</ville>
+			<telephone>0513129392</telephone>
+			<compagnie>indep</compagnie>
+			<affiche date="12122015">
+				<film id="1">
+					<seance>
+						<jour>mercredi</jour>
+						<heure>17</heure>
+					</seance>
+				</film>
+				<film id="2">
+					<seance>
+						<jour>mardi</jour>
+						<heure>10</heure>
+					</seance>
+				</film>
+			</affiche>
+	</cinema>
+	<cinema name="2">
+		<nom>UGC</nom>
+		<adresse>cours Trucn</adresse>
+		<ville>Bordeaux</ville>
+		<telephone>0513223588</telephone>
+		<compagnie>UGC</compagnie>
+		<affiche date="12122015">
+			<film id="5">
+				<seance>
+					<jour>jeudi</jour>
+					<heure>21</heure>
+				</seance>
+			</film>
+			<film id="2">
+				<seance>
+					<jour>mercredi</jour>
+					<heure>18</heure>
+				</seance>
+			</film>
+		</affiche>
+	</cinema>
+	<cinema name="3">
+		<nom>Pathe</nom>
+		<adresse>rue Machinn</adresse>
+		<ville>Bordeaux</ville>
+		<telephone>0545327733</telephone>
+		<compagnie>Gaumont</compagnie>
+		<affiche date="12122015">
+			<film id="3">
+				<seance>
+					<jour>lundi</jour>
+					<heure>21</heure>
+				</seance>
+			</film>
+			<film id="4">
+				<seance>
+					<jour>mardi</jour>
+					<heure>18</heure>
+				</seance>
+			</film>
+		</affiche>
+	</cinema>
+	<cinema name="4">
+		<nom>Vigo</nom>
+		<adresse>rue Franklinn</adresse>
+		<ville>Bordeaux</ville>
+		<telephone>0543283257</telephone>
+		<compagnie>indep</compagnie>
+		<affiche date="12122015"/>
+	</cinema>
+	<cinema name="5">
+		<nom>Decavision</nom>
+		<adresse>rue Carnotn</adresse>
+		<ville>Annecy</ville>
+		<telephone>0443283257</telephone>
+		<compagnie>indep</compagnie>
+		<affiche date="12122015">
+			<film id="1">
+				<seance>
+					<jour>mercredi</jour>
+					<heure>17</heure>
+				</seance>
+			</film>
+			<film id="2">
+				<seance>
+					<jour>mardi</jour>
+					<heure>10</heure>
+				</seance>
+			</film>
+		</affiche>
+	</cinema>
+</cinemas>

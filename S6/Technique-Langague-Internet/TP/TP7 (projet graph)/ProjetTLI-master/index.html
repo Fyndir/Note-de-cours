@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Language" content="fr"/>
+        <link rel="stylesheet" href="src/style/style.css">
+        <script src="src/script/graphLibrairie.js"></script>
+        <script src="src/script/script.js"></script>
+        <title>Graphe en Canvas</title>
+    </head>
+    <body onload="init()">
+        <h1>Nom du graphe</h1>
+        <br>
+        <div class="controls">
+            <div class="control">
+                <label>Graphe orienté : <input type="checkbox" id="directed"></label>
+            </div>
+            <div class="control">
+                <label>Afficher les labels : <input type="checkbox" id="label" checked></label>
+            </div>
+            <div class="control">
+                <label>Pondérations : <input type="checkbox" id="valued"></label>
+            </div>
+        </div>
+        <br>
+        <div class="content">
+            <canvas id="zoneDeTravail" width="700" height="700">
+            </canvas>
+        </div>   
+        <br>
+
+        <div class="controls">
+            <div class="control">
+                <button onclick="reinit()">Réinitialiser</button>
+            </div>
+
+            <form id="fcontrols" class="control">
+                <label>Importer<input  oninput="importInfo()" type="file" id="fileInput" accept=".json"></label>
+            </form>
+
+            <div class="control">
+                <button onclick="exportInfo()">Exporter</button>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="algo">
+            <select id="select"></select>
+            <button onclick="lancerAlgo()">Algo</button>
+            <br>
+            <div id="DijkstraControls">
+                <button onclick="setBeg()">Début</button>
+                <button onclick="setEnd()">Fin</button>
+                <br>
+                Séléctionnez un sommet puis cliquez sur "Début" ou "fin" pour le définir en tant que tel
+            </div>
+            <br>
+            <div id="resultAlgo">
+            </div>
+        </div>
+
+        <br>
+
+        <div class="controls" id="s">
+            <div class="control">
+                <label>Taille des sommets : <input type="range" value="12" min="3" max="40" id="rayonS"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur des sommets : <input type="color" name="verticeColor" id="verticeColor" value="#e24747"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur des arrêtes : <input type="color" name="edgeColor" id="edgeColor" value="#d4cd08"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur de selection : <input type="color" name="selectedColor" id="selectedColor" value="#22253c"></label>
+            </div>
+                  
+            <div class="control">
+                <label>Couleur des sommets de classe A : <input type="color" name="classAColor" id="classAColor" value="#1ec93f"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur des sommets de classe B : <input type="color" name="classBColor" id="classBColor" value="#43afd6"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur du canvas : <input type="color" name="canvasColor" id="canvasColor" value="#ffffff"></label>
+            </div>
+            
+            <div class="control">
+                <label>Couleur des arrêtes du chemin : <input type="color" name="pathColor" id="pathColor" value="#d47e08"></label>
+            </div>
+        </div>
+    </body>
+</html>

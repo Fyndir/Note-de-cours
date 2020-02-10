@@ -1,0 +1,100 @@
+<!--
+ * NAT - An universal Translator
+ * Copyright (C) 2005 Bruno Mascret
+ * Contact: bmascret@free.fr
+ * 
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+
+<!-- DTD pour Windob/NAT -->
+
+<!-- pour les conversions venant de xhtml -->
+<!ENTITY % laDtdXHTML PUBLIC
+  "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd" >
+%laDtdXHTML;
+
+<!-- pour le contenu mathématique -->
+<!ENTITY % laDtdMath 
+ PUBLIC "-//W3C//DTD MathML 2.0//EN"	
+ "http://www.w3.org/Math/DTD/mathml2/mathml2.dtd" >
+%laDtdMath;
+
+<!-- pour la musique -->
+<!ENTITY % laDtdMusique
+ PUBLIC "-//Recordare//DTD MusicXML 3.0 Partwise//EN"
+  "http://www.musicxml.org/dtds/partwise.dtd"
+>
+%laDtdMusique;
+
+<!ENTITY % ent-isogrk1 SYSTEM "nat://system/xsl/mmlents/isogrk1.ent" >
+%ent-isogrk1;
+<!ENTITY % ent-isogrk2 SYSTEM "nat://system/xsl/mmlents/isogrk2.ent" >
+%ent-isogrk2;
+<!ENTITY % ent-isogrk3 SYSTEM "nat://system/xsl/mmlents/isogrk3.ent" >
+%ent-isogrk3;
+<!ENTITY % ent-isogrk4 SYSTEM "nat://system/xsl/mmlents/isogrk4.ent" >
+%ent-isogrk4;
+
+
+<!-- pour le contenu litéraire -->
+<!ELEMENT mot (#PCDATA | partie)*>
+<!ELEMENT partie (#PCDATA)>
+<!ELEMENT ponctuation (#PCDATA)>
+<!ELEMENT lit ((mot | ponctuation)*)>
+<!ELEMENT page-break EMPTY>
+<!ATTLIST mot
+	hauteur 	CDATA #IMPLIED
+	mev			CDATA #IMPLIED
+	integral	CDATA #IMPLIED
+	doSpace	CDATA #IMPLIED
+>
+<!ATTLIST partie
+	mev			CDATA #IMPLIED
+>
+<!ATTLIST phrase
+	styleOrig		CDATA #IMPLIED
+	center		CDATA #IMPLIED
+	lang		CDATA #IMPLIED
+>
+
+<!-- Element conteneurs de contenus -->
+<!-- TODO il faudra changer un jour phrase en paragraphe -->
+<!ELEMENT phrase ((math | lit | score-partwise)*)>
+<!ELEMENT titre ((math | lit | score-partwise)*)>
+<!ATTLIST titre
+	niveauOrig		CDATA #IMPLIED
+	niveauBraille	CDATA #IMPLIED
+	styleOrig			CDATA #IMPLIED
+>
+<!ELEMENT tableau ((col)+)>
+<!ELEMENT ligne ((math | lit | score-partwise)*)>
+<!ELEMENT col ((ligne)+)> 
+<!ELEMENT ol (li)+>
+<!ELEMENT ul (li)+>
+<!ELEMENT li (ol | ul | math | lit | score-partwise)*>
+
+<!-- Element de base -->
+<!ELEMENT doc ((phrase | titre | ol | ul | tableau | page-break)*)>
+
+<!-- entités utiles renvoyées par mathtype, n'existant pas dans la dtd mathml -->
+<!ENTITY % table_braille PUBLIC "table braille" "../tablesUsed/brailleUTF8.ent">
+%table_braille;
+<!ENTITY quad    "&ThickSpace;"> <!-- espace -->
+<!ENTITY neq     "&ne;"> <!-- different de -->
+<!ENTITY epsilon "&epsiv;"> <!-- epsilon -->
+<!ENTITY empty "&emptyv;"> <!-- endemble vide -->
+<!ENTITY ldots   "&mldr;"> <!-- points de suspension -->
+<!ENTITY hat     "&Hat;"> <!-- signe d'angle -->

@@ -1,0 +1,343 @@
+#CE1
+
+conf t
+
+interface loopback0
+ip address 164.4.4.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback1
+ip address 164.4.5.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback2
+ip address 164.4.6.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback3
+ip address 164.4.7.1 255.255.255.0
+no shutdown
+exit
+
+interface s2/0
+ip address 100.100.100.1 255.255.255.252
+no shutdown
+exit
+
+interface s2/1
+ip address 100.100.100.5 255.255.255.252
+no shutdown
+exit
+
+router bgp 65000
+neighbor 100.100.100.2 remote-as 100
+neighbor 100.100.100.6 remote-as 100
+
+network 164.4.4.0 mask 255.255.255.0
+network 164.4.5.0 mask 255.255.255.0
+network 164.4.6.0 mask 255.255.255.0
+network 164.4.7.0 mask 255.255.255.0
+
+exit
+
+write
+
+
+#PE1
+
+conf t
+
+interface s2/0
+ip address 100.100.100.2 255.255.255.252
+no shutdown
+exit
+
+interface s2/1
+ip address 10.10.10.17 255.255.255.252
+no shutdown
+exit
+
+interface s2/2
+ip address 10.10.10.1 255.255.255.252
+no shutdown
+exit
+
+interface s3/0
+ip address 10.10.10.21 255.255.255.252
+no shutdown
+exit
+
+interface loopback0
+ip address 1.1.1.1 255.255.255.255
+exit
+
+router ospf 1
+network 100.100.100.0 255.255.255.252 area 0
+network 10.10.10.20 255.255.255.252 area 0
+network 10.10.10.0 255.255.255.252 area 0
+network 10.10.10.16 255.255.255.252 area 0
+network 1.1.1.1 255.255.255.255 area 0
+exit
+
+router bgp 100
+neighbor 100.100.100.1 remote-as 65000
+neighbor 2.2.2.2 remote-as 100
+neighbor 3.3.3.3 remote-as 100
+neighbor 4.4.4.4 remote-as 100
+neighbor 2.2.2.2 update-source loopback0
+neighbor 3.3.3.3 update-source loopback0
+neighbor 4.4.4.4 update-source loopback0
+neighbor 2.2.2.2 next-hop-self
+neighbor 3.3.3.3 next-hop-self
+neighbor 4.4.4.4 next-hop-self
+neighbor 100.100.100.1 remove-private-as
+
+exit
+
+write
+
+
+#PE2
+
+conf t
+
+interface s2/1
+ip address 10.10.10.18 255.255.255.252
+no shutdown
+exit
+
+interface s2/2
+ip address 10.10.10.25 255.255.255.252
+no shutdown
+exit
+
+interface s3/0
+ip address 10.10.10.9 255.255.255.252
+no shutdown
+exit
+
+interface s3/2
+ip address 100.100.100.10 255.255.255.252
+no shutdown
+exit
+
+interface loopback0
+ip address 2.2.2.2 255.255.255.255
+exit
+
+router ospf 1
+network 100.100.100.8 255.255.255.252 area 0
+network 10.10.10.24 255.255.255.252 area 0
+network 10.10.10.8 255.255.255.252 area 0
+network 10.10.10.16 255.255.255.252 area 0
+network 2.2.2.2 255.255.255.255 area 0
+exit
+
+router bgp 100
+neighbor 100.100.100.9 remote-as 65000
+neighbor 4.4.4.4 remote-as 100
+neighbor 1.1.1.1 remote-as 100
+neighbor 3.3.3.3 remote-as 100
+neighbor 1.1.1.1 update-source loopback0
+neighbor 3.3.3.3 update-source loopback0
+neighbor 4.4.4.4 update-source loopback0
+neighbor 1.1.1.1 next-hop-self
+neighbor 3.3.3.3 next-hop-self
+neighbor 4.4.4.4 next-hop-self
+neighbor 100.100.100.9 remove-private-as
+exit
+
+write
+
+
+#PE3
+
+conf t
+
+interface s2/1
+ip address 100.100.100.6 255.255.255.252
+no shutdown
+exit
+
+interface s3/0
+ip address 10.10.10.22 255.255.255.252
+no shutdown
+exit
+
+interface s2/3
+ip address 10.10.10.5 255.255.255.252
+no shutdown
+exit
+
+interface s2/0
+ip address 10.10.10.29 255.255.255.252
+no shutdown
+exit
+
+interface loopback0
+ip address 3.3.3.3 255.255.255.255
+exit
+
+router ospf 1
+network 100.100.100.4 255.255.255.252 area 0
+network 10.10.10.20 255.255.255.252 area 0
+network 10.10.10.4 255.255.255.252 area 0
+network 10.10.10.28 255.255.255.252 area 0
+network 3.3.3.3 255.255.255.255 area 0
+exit
+
+router bgp 100
+neighbor 100.100.100.5 remote-as 65000
+neighbor 4.4.4.4 remote-as 100
+neighbor 1.1.1.1 remote-as 100
+neighbor 2.2.2.2 remote-as 100
+neighbor 1.1.1.1 update-source loopback0
+neighbor 2.2.2.2 update-source loopback0
+neighbor 4.4.4.4 update-source loopback0
+neighbor 2.2.2.2 next-hop-self
+neighbor 1.1.1.1 next-hop-self
+neighbor 4.4.4.4 next-hop-self
+neighbor 100.100.100.5 remove-private-as
+exit
+
+write
+
+
+#PE4
+
+conf t
+
+interface loopback0
+ip address 4.4.4.4 255.255.255.255
+exit
+
+interface s3/3
+ip address 100.100.100.14 255.255.255.252
+no shutdown
+exit
+
+interface s2/2
+ip address 10.10.10.26 255.255.255.252
+no shutdown
+exit
+
+interface s3/1
+ip address 10.10.10.13 255.255.255.252
+no shutdown
+exit
+
+interface s2/0
+ip address 10.10.10.30 255.255.255.252
+no shutdown
+exit
+
+router ospf 1
+network 100.100.100.12 255.255.255.252 area 0
+network 10.10.10.24 255.255.255.252 area 0
+network 10.10.10.12 255.255.255.252 area 0
+network 10.10.10.28 255.255.255.252 area 0
+network 4.4.4.4 255.255.255.255 area
+exit
+
+router bgp 100
+neighbor 100.100.100.13 remote-as 65000
+neighbor 2.2.2.2 remote-as 100
+neighbor 3.3.3.3 remote-as 100
+neighbor 1.1.1.1 remote-as 100
+neighbor 1.1.1.1 update-source loopback0
+neighbor 2.2.2.2 update-source loopback0
+neighbor 3.3.3.3 update-source loopback0
+neighbor 2.2.2.2 next-hop-self
+neighbor 3.3.3.3 next-hop-self
+neighbor 1.1.1.1 next-hop-self
+neighbor 100.100.100.13 remove-private-as
+exit
+
+write
+
+#p
+
+conf t
+
+interface loopback0
+ip address 7.7.7.7 255.255.255.255
+exit
+
+interface s3/0
+ip address 10.10.10.10 255.255.255.252
+no shutdown
+exit
+
+interface s3/1
+ip address 10.10.10.14 255.255.255.252
+no shutdown
+exit
+
+interface s2/2
+ip address 10.10.10.2 255.255.255.252
+no shutdown
+exit
+
+interface s2/3
+ip address 10.10.10.6 255.255.255.252
+no shutdown
+exit
+
+router ospf 1
+network 10.10.10.0 255.255.255.252 area 0
+network 10.10.10.8 255.255.255.252 area 0
+network 10.10.10.12 255.255.255.252 area 0
+network 10.10.10.4 255.255.255.252 area 0
+exit
+
+write
+
+#CE2
+
+conf t
+
+interface loopback0
+ip address 164.4.0.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback1
+ip address 164.4.1.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback2
+ip address 164.4.2.1 255.255.255.0
+no shutdown
+exit
+
+interface loopback3
+ip address 164.4.3.1 255.255.255.0
+no shutdown
+exit
+
+interface s3/2
+ip address 100.100.100.9 255.255.255.252
+no shutdown
+exit
+
+interface s3/3
+ip address 100.100.100.13 255.255.255.252
+no shutdown
+exit
+
+router bgp 65000
+neighbor 100.100.100.10 remote-as 100
+neighbor 100.100.100.14 remote-as 100
+network 164.4.0.0 mask 255.255.255.0
+network 164.4.1.0 mask 255.255.255.0
+network 164.4.2.0 mask 255.255.255.0
+network 164.4.3.0 mask 255.255.255.0
+exit
+
+
+write
+

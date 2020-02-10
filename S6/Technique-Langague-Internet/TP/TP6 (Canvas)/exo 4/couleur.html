@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Language" content="fr"/>
+    <title>HTML Canvas: John Samuel</title>
+    <style type="text/css">
+    body{
+      background-color: #FFFFFF;
+    }
+    #sidebar {
+      position: fixed;
+      background-color: #1B80CF;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width:30vw;
+    }
+    .title {
+      position:relative;
+      text-align: center;
+      line-height: 9vh;
+      font-size: 1.6vmax;
+      font-family: 'Arial';
+      margin-top: 30vh;
+    }
+    .title a:link, 
+    .title a:visited{
+     color: #FFFFFF;
+     text-decoration:none;
+    }
+    .subtitle {
+      top: 50vh;
+      text-align: center;
+      line-height: 1.3em;
+      font-family: 'Arial';
+      font-size: 1.5vmax;
+      color: #FFFFFF;
+    }
+    .subtitle a:link,
+    .subtitle a:visited{
+     color: #FFFFFF;
+     text-decoration:none;
+    }
+    .licence {
+      position:fixed;
+      text-align: right;
+      bottom:0;
+      right:0;
+    }
+    .home {
+     font-family: 'Arial';
+     text-align: left;
+    }
+    .home ul{
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      list-style:none;
+    }
+    .home li{
+     position: relative;
+     float: left;
+     margin-right: 1em;
+    }
+    .content {
+     line-height: 1.6em;
+     font-size: 1.3em;
+     font-family: 'Arial';
+     margin-top: 8vh;
+    }
+    .content h3,h2,h4{
+     color:#1B80CF;
+    }
+    .content a:link,
+    .content a:visited{
+     color:#1B80CF;
+    }
+    .home a:link,
+    .home a:visited{
+     color: #D3D3D3;
+    }
+    .page {
+      width:65vw;
+      height:100%;
+      margin-left:30vw;
+      overflow: auto;
+      padding: 0 1em;
+    }
+    img {
+     max-width:100%;
+     max-height:100%;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="content">
+        <h2>Choissisez une couleur</h2>
+        <input id="couleur" type="color" oninput="imageCouleur()"/>
+        <br/>
+        <canvas id="imageData" width="700" height="800">
+        </canvas>
+        <script src="couleur.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

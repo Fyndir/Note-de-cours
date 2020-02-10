@@ -1,0 +1,1 @@
+Il faut lancer l'index en premier, pas le jeu

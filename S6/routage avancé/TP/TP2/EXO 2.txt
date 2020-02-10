@@ -1,0 +1,136 @@
+#ISP
+
+conf t 
+interface f1/0
+ip address 192.168.200.1 255.255.255.0
+exit
+
+interface F0/0
+ip address 192.168.100.1 255.255.255.0
+exit
+
+interface s2/1
+ip address 192.168.1.1 255.255.255.252
+exit
+
+interface s2/0
+ip address 192.168.1.5 255.255.255.252
+exit
+
+router bgp 200
+neighbor 192.168.1.5 remote-as 64512
+neighbor 192.168.1.2 remote-as 64512
+network 192.168.200.0 255.255.255.0
+network 192.168.100.0 255.255.255.0
+exit
+
+write
+
+#SANJOSE1
+
+conf t
+
+interface f1/0
+ip address 172.16.64.1 255.255.255.0
+exit
+
+interface s2/0
+ip address 192.168.1.6 255.255.255.252
+exit
+
+interface s2/1
+ip address 172.16.1.1 255.255.255.252
+exit
+
+interface f0/0
+ip address 172.16.3.1 255.255.255.252
+exit
+
+interface loopback0
+ip address 1.1.1.1 255.255.255.255
+exit
+
+router ospf 1 area 0
+network 172.16.64.0 255.255.255.0  area 0
+network 172.16.1.0 255.255.255.252  area 0
+network 172.16.3.0 255.255.255.0  area 0
+network 1.1.1.1 255.255.255.255 area 0
+exit
+
+router bgp 64512
+neighbor 2.2.2.2 remote-as 64512
+neighbor 2.2.2.2 update-source loopback0
+neighbor 192.168.1.5 remote-as 200
+neighbor 2.2.2.2 next-hop-self
+
+network 172.16.64.0 mask 255.255.255.0
+network 172.16.32.0 mask 255.255.255.0
+redistibute bgp 64512 subnets
+exit
+
+write
+
+#SANJOSE2
+
+conf t
+
+interface s2/1
+ip address 192.168.1.2 255.255.255.252
+exit
+
+interface f0/0
+ip address 172.16.3.2 255.255.255.0
+exit
+
+interface s2/2
+ip address 172.16.2.2 255.255.255.252
+exit
+
+interface f1/0
+ip address 172.16.32.1 255.255.255.0
+exit
+
+interface loopback0
+ip address 2.2.2.2 255.255.255.255
+exit
+
+router ospf 1
+network 172.16.32.0 255.255.255.0  area 0
+network 172.16.2.0 255.255.255.252 area 0
+network 172.16.3.0 255.255.255.0  area 0
+network 2.2.2.2 255.255.255.255 area 0
+redistibute bgp 64512 subnets
+exit
+
+router bgp 64512
+neighbor 1.1.1.1 remote-as 64512
+neighbor 1.1.1.1 update-source loopback0
+neighbor 1.1.1.1 next-hop-self
+
+neigbor 192.168.1.1 remote-as 200
+network 172.16.64.0 mask 255.255.255.0
+network 172.16.32.0 mask 255.255.255.0
+exit
+
+write
+
+#R-INTER
+
+conf t 
+
+interface s2/1
+ip address 172.16.1.2 255.255.255.252
+exit
+
+interface s2/2
+ip address 172.16.2.1 255.255.255.252
+exit
+
+router ospf 1
+network 172.16.1.0 255.255.255.252  area 0
+network 172.16.2.0 255.255.255.252  area 0
+exit
+
+write
+
+

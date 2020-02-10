@@ -1,0 +1,274 @@
+# R1
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+interface Lo0
+ip address 10.1.1.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::1:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+! On indique que c'est point à point sinon il envoie en /128
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface s3/0
+ipv6 enable
+ipv6 address FEC0::12:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+interface s3/1
+ipv6 enable
+ipv6 address FEC0::13:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+interface s4/0
+ipv6 enable
+ipv6 address FEC0::14:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 4
+no shutdown
+exit
+
+
+end
+write mem
+
+
+
+# R2
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+interface Lo0
+ip address 10.1.2.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::2:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+! On indique que c'est point à point sinon il envoie en /128
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface s3/0
+ipv6 enable
+ipv6 address FEC0::12:2/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+interface fa0/0
+ipv6 enable
+ipv6 address FEC0::23:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+
+end
+write mem
+
+
+
+# R3
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+! Redistribution de OSPF dans RIP (attention RIP s'identifie par un nom)
+ipv6 router rip RIP
+redistribute ospf 1 include-connected
+exit
+
+! Redistribution de RIP dans OSPF
+ipv6 router ospf 1
+redistribute rip RIP include-connected metric-type 1
+exit
+
+interface Lo0
+ip address 10.1.3.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::3:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+! On indique que c'est point à point sinon il envoie en /128
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface s3/1
+ipv6 enable
+ipv6 address FEC0::13:2/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+interface fa0/0
+ipv6 enable
+ipv6 address FEC0::23:2/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 0
+no shutdown
+exit
+
+interface s4/0
+ipv6 enable
+ipv6 address FEC0::15:1/112
+! Affectation de l'interface à un processus et une zone OSPFv3
+ipv6 ospf 1 area 5
+no shutdown
+exit
+
+interface fa2/0
+ipv6 enable
+ipv6 address FEC0::36:1/112
+ipv6 rip RIP enable
+no shutdown
+exit
+
+
+end
+write mem
+
+
+
+### RIP ###
+# R6
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+interface Lo0
+ipv6 enable
+ipv6 address FEC0::1:8:1/112
+! Activation de RIP sur cette interface
+ipv6 rip RIP enable
+no shutdown
+exit
+interface Lo1
+ipv6 enable
+ipv6 address FEC0::1:9:1/112
+! Activation de RIP sur cette interface
+ipv6 rip RIP enable
+no shutdown
+exit
+interface Lo2
+ipv6 enable
+ipv6 address FEC0::1:10:1/112
+! Activation de RIP sur cette interface
+ipv6 rip RIP enable
+no shutdown
+exit
+interface Lo3
+ipv6 enable
+ipv6 address FEC0::1:11:1/112
+! Activation de RIP sur cette interface
+ipv6 rip RIP enable
+no shutdown
+exit
+
+interface fa2/0
+ipv6 enable
+ipv6 address FEC0::36:2/112
+! Activation de RIP sur cette interface
+ipv6 rip RIP enable
+no shutdown
+exit
+
+
+end
+write mem
+
+
+
+
+
+
+
+
+### MULTIZONES !NON! FONCTIONNEL ###
+# R4
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+interface Lo0
+ip address 10.1.4.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::4:1/112
+ipv6 ospf 1 area 4
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface Lo1
+ip address 10.1.5.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::5:1/112
+ipv6 ospf 1 area 4
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface s4/0
+ipv6 enable
+ipv6 address FEC0::14:2/112
+ipv6 ospf 1 area 4
+no shutdown
+exit
+
+
+end
+write mem
+
+
+
+# R5
+conf t
+! Activation routage IPv6
+ipv6 unicast-routing
+
+interface Lo0
+ip address 10.1.6.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::6:1/112
+ipv6 ospf 1 area 5
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface Lo1
+ip address 10.1.7.1 255.255.255.0
+ipv6 enable
+ipv6 address FEC0::7:1/112
+ipv6 ospf 1 area 5
+ipv6 ospf network point-to-point 
+no shutdown
+exit
+
+interface s4/0
+ipv6 enable
+ipv6 address FEC0::15:2/112
+ipv6 ospf 1 area 5
+no shutdown
+exit
+
+
+end
+write mem
+
+
+

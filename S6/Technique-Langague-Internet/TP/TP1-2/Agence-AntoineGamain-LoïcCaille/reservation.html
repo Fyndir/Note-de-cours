@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Le Grand Tour - Reservation</title>
+        <meta name="description" content="Agence de voyage">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+
+    <body onload="Destination()">
+
+        <header>
+
+            <h1>
+                Le Grand Tour
+            </h1>
+            <menu>
+                <nav>
+                    <a href="index.html">Accueil</a>
+                    <a href="apropos.html">A propos & Contact</a>
+                </nav>
+            </menu>
+
+        </header>
+
+        <h2> Réservation </h2>
+        
+        <div class="text" id="res">
+            
+            <p id="dest"></p>
+        
+            <img id="image">
+            
+        </div>
+
+        <form id="renseignement" action="recap.html">
+            
+            <input type="hidden" name="destination" id="destination">
+            
+            <input type="hidden" name="prix" id="prixJour">
+
+            <label for="nom">Nom<span class="formStar">*</span> :</label><br/>
+            <input type="text" name="nom" id="nom"><br/><br/>
+
+            <label for="prenom">Prenom<span class="formStar">*</span> :</label><br/>
+            <input type="text" name="prenom" id="prenom"><br/><br/>
+
+            <label for="mail">Mail<span class="formStar">*</span> :</label><br/>
+            <input type="mail" name="mail" id="mail"><br/><br/>
+
+            <label for="tel">Téléphone :</label><br/>
+            <input type="tel" name="tel" id="tel"><br/><br/>
+
+            <label for="depart">Date de départ<span class="formStar">*</span> :</label><br/>
+            <input type="date" name="depart" id="depart"><br/><br/>
+
+            <label for="retour">Date de retour<span class="formStar">*</span> :</label><br/>
+            <input type="date" name="retour" id="retour"><br/><br/>
+
+            <label for="adulte">Nombre d'adultes<span class="formStar">*</span> :</label><br/>
+            <input type="number" id="NbAdulte" name="adulte"><br/><br/>
+
+            <label for="enfant">Nombre d'enfants<span class="formStar">*</span> :</label><br/>
+            <input type="number" id="NbEnfant" name="enfant"><br/><br/>
+
+            <label class="petitDej" for="petitDej">Petit-déjeuner ? :
+                <input type="checkbox" id="dejeuner" name="petitDej">
+                <input type="hidden" name="dej" id="dej">
+                <br/><br/>
+            </label>
+
+            <label for="rens">Renseignements :</label><br/>
+            <textarea name="rens" rows="10" cols="30" id="rens"></textarea><br/><br/>
+            
+            <input type="hidden" name="prixFinal" id="prixFinal">
+
+            <div id="buttonForm">
+                <button type="button" onclick="AfficherPrix()" value="Calculer">Calculer</button>
+                <button type="button" onclick="SendForm()" value="Valider">Valider</button>
+            </div>
+
+            <p id="Prix"></p>
+            <p id="Erreur"></p>
+        </form>
+
+        <footer>
+            <p>Site réalisé par Antoine Gamain & Loïc Caille</p>
+        </footer>
+
+    </body>
+
+</html>

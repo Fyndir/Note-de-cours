@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="Content-Language" content="fr"/>
+        <link rel="stylesheet" href="index.css">
+        <title>Jeu Canevas</title>
+    </head>
+    <body onload="initRules()">
+        <div id="description">
+            <h2>G R A N D Grand Prix</h2>
+            <p>Vous voici plongé en 1965, vous incarnez Ayrton Clark, un jeune pilote fougeux.</p>
+            <p>La course ? le G R A N D Grand prix de Formule 1. Une infinité de participants répartis dans 8 écuries, choisissez la votre et rentrez dans la course, ou bien regardez les règles du jeu avant.</p>
+        </div>
+        <div id="content"></div>
+        <div id="regles">
+            <h2>Règles</h2>
+        </div>
+        <script src="script.js"></script>
+        <div class="rule">
+            <p>La course se déroule sur une route infiniment longue et sur 4 voies</p>
+            <canvas id="race" width="800px" height="400px"></canvas>
+        </div>
+        <div class="rule">
+            <p>Vous controlez votre bolide avec la flèche du haut pour tourner à gauche et bas pour tourner à droite</p>
+            <canvas id="view"></canvas>
+        </div>
+        <h3>Durant la course une multitude d'obstacles se présentera à vous :</h3>
+        <div class="rule">
+            <p>Vos adversaires, evitez les pour éviter la collision</p>
+            <canvas id="opp"></canvas>
+        </div>
+        <div class="rule">
+            <p>Sans les pneux adaptés, rouler sur un flaque d'huile vous ferait perdre la direction de votre véhicule</p>
+            <canvas id="oil"></canvas>
+        </div>
+        <div class="rule">
+            <p>Munissez vous alors des bons pneux quand vous le pouvez</p>
+            <canvas id="pneu"></canvas>
+        </div>
+        <div class="rule">
+            <p>Sur cette course, pas de pit stop, vous devez vous même récupérer votre essence</p>
+            <canvas id="gas"></canvas>
+        </div>
+        <div class="rule2">
+            <p>Un tableau de bord est à votre disposition pour vous tenir au courant du statut de votre véhicule</p>
+            <canvas id="dash" width="1000px", height="300px"></canvas>
+        </div>
+        <br>
+        
+        <footer>
+            Jeu réalisé par Antoine Gamain et Loïc Caille
+        </footer>
+        
+        <small>Tu peux tricher aussi mais c'est pas bien, J pour finir une partie, K pour afficher les hit box, Z pour te donner les roues spéciales, E pour te redonner de l'essence, T pour ralentir le temps et Y pour l'accélerer</small>
+    </body>
+</html>

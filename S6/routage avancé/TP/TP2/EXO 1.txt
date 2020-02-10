@@ -1,0 +1,50 @@
+#R1
+
+conf t
+interface s2/0
+ip address 1.0.0.2 255.255.255.252
+exit
+interface f0/0
+ip adress 10.1.1.0 255.255.255.0
+exit
+router bgp 200
+neighbor 10.0.0.1 remote-as 100
+network 10.1.1.0 mask 255.255.255.0
+write
+
+#R2
+
+conf t 
+interface s2/0
+ip address 10.0.0.1 255.255.255.252
+exit
+interface f0/0
+ip address 192.168.0.1 255.255.255.0
+exit
+interface f1/0
+ip address 192.168.1.1 255.255.255.0
+exit
+interface s2/1
+ip address 172.16.0.1 255.255.255.252
+exit
+router bgp 100
+neighbor 10.0.0.2 remote-as 200
+neighbor 172.16.0.2 remote-as 300
+network 192.168.0.0 mask 255.255.255.0
+network 192.168.1.0 mask 255.255.255.0
+write
+
+#R3
+
+conf t 
+interface s2/1
+ip address 172.16.0.2 255.255.255.252
+exit
+interface f0/0
+ip address 172.16.1.1 255.255.255.0
+exit
+router bgp 300
+neighbor 172.16.0.1 remote-as 100
+network 172.16.0.0 mask 255.255.255.0
+write
+

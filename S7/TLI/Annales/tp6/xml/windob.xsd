@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+* NAT - An universal Translator
+* Copyright (C) 2005 Bruno Mascret
+* Contact: bmascret@free.fr
+* 
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public License
+* as published by the Free Software Foundation; either version 2
+* of the License.
+* 
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+* 
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	targetNamespace="http://natbraille.free.fr/xsl" xmlns:nat="http://natbraille.free.fr/xsl">
+
+	<xs:element name="doc" nillable="false" type="nat:doc_content" />
+
+	<xs:complexType name="doc_content">
+		<xs:sequence>
+			<xs:element name="configuration" type="nat:configuration"
+				maxOccurs="1" />
+			<xs:element name="trans" type="nat:trans" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:attributeGroup name="attr.id">
+		<xs:attribute name="id" type="xs:integer" use="required"/><!-- identifiant unique de l'élément-->
+	</xs:attributeGroup>
+
+	<!--
+	
+		CONFIGURATION
+	
+	-->
+	<xs:complexType name="configuration">
+		<xs:all>
+			<xs:element name="options" type="nat:options" minOccurs="1"
+				maxOccurs="1" />
+			<xs:element name="rules" type="nat:rules" minOccurs="1"
+				maxOccurs="1" />
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="options">
+		<xs:sequence>
+			<xs:element name="option" type="nat:option" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="rules">
+		<xs:sequence>
+			<xs:element name="locution" type="nat:contraction"
+				minOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="signe" type="nat:signe" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="symb" type="nat:symb" minOccurs="0"
+				maxOccurs="unbounded" />
+			<xs:element name="rule" type="nat:rule" minOccurs="0"
+				maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="contraction">
+		<xs:sequence>
+			<xs:element name="black" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="braille" type="xs:string" minOccurs="1" maxOccurs="1"/>
+			<xs:element name="ambBr" type="nat:ambiguity" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ambBl" type="nat:ambiguity" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="signe">
+		<xs:complexContent>
+			<xs:extension base="nat:contraction">
+				<xs:attributeGroup ref="nat:attr.id" />
+				<xs:attributeGroup ref="nat:attr.signe" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="symb">
+		<xs:complexContent>
+			<xs:extension base="nat:contraction">
+				<xs:attributeGroup ref="nat:attr.id" />
+				<xs:attributeGroup ref="nat:attr.symb" />
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="rule">
+			<xs:sequence>
+				<xs:element name="desc" type="xs:string" />
+				<xs:element name="ref" type="xs:string" />
+				<xs:element name="for" type="nat:for" />
+				<xs:element name="regIn" type="xs:string" />
+				<xs:element name="regOut" type="xs:string" />
+				<xs:element name="regInBr" type="xs:string" />
+				<xs:element name="regOutBr" type="xs:string" />
+			</xs:sequence>
+			<xs:attributeGroup ref="nat:attr.id" />
+	</xs:complexType>
+
+	<xs:simpleType name="for">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="signe" />
+			<xs:enumeration value="symb" />
+			<xs:enumeration value="general" />
+			<xs:enumeration value="all" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="ambiguity">
+			<xs:sequence>
+				<xs:element name="message" type="xs:string" />
+				<xs:element name="alternatives" type="nat:alternatives"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="nat:attr.id" />
+	</xs:complexType>
+	
+	<xs:complexType name="alternatives">
+		<xs:sequence>
+			<xs:element name="alternative" type="xs:string" minOccurs="2" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="option">
+		<xs:attribute name="name" type="xs:string" />
+		<xs:attribute name="value" type="xs:string" />
+		<xs:attributeGroup ref="nat:attr.id" />
+	</xs:complexType>
+	
+	<!-- attributes -->
+	
+	<xs:attributeGroup name="attr.signe">
+		<xs:attribute name="plural" type="xs:boolean" use="optional"/>
+		<xs:attribute name="peda" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+	
+	<xs:attributeGroup name="attr.symb">
+		<xs:attribute name="invariant" type="xs:boolean" use="optional"/>
+		<xs:attribute name="composable" type="xs:boolean" use="optional"/>
+		<xs:attribute name="except" type="xs:boolean" use="optional"/>
+	</xs:attributeGroup>
+		
+		<!--
+		
+		TRANSCRIPTION
+		
+		-->
+
+	<xs:complexType name="trans">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="par" type="nat:par" />
+			<xs:element name="page-break" type="nat:page-break" />
+			<xs:element name="br" type="nat:br" />
+			<xs:element name="title" type="nat:title" />
+			<xs:element name="ul" type="nat:ul" />
+			<xs:element name="ol" type="nat:ol" />
+			<xs:element name="table" type="nat:table" />
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" />
+		<xs:attribute name="date" type="xs:date" />
+	</xs:complexType>
+
+	<xs:complexType name="par">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="lit" type="nat:lit" />
+			<xs:element name="math" type="nat:math" />
+			<xs:element name="chemistry" type="nat:math" />
+			<xs:element name="music" type="nat:music" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="lit">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="w" type="nat:w" />
+			<xs:element name="nbsp" type="nat:nbsp" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="w" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="part" type="nat:part" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="part">
+
+	</xs:complexType>
+
+	<xs:complexType name="nbsp">
+		<xs:attribute name="number" type="xs:positiveInteger" />
+	</xs:complexType>
+
+	<xs:complexType name="math">
+
+	</xs:complexType>
+
+	<xs:complexType name="music">
+
+	</xs:complexType>
+
+	<xs:complexType name="page-break"></xs:complexType>
+	<xs:complexType name="br"></xs:complexType>
+	<xs:complexType name="title"></xs:complexType>
+	<xs:complexType name="ul"></xs:complexType>
+	<xs:complexType name="ol"></xs:complexType>
+	<xs:complexType name="table"></xs:complexType>
+	
+</xs:schema>

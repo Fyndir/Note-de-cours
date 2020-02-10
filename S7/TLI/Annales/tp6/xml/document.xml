@@ -1,0 +1,2770 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/xsl" href="document.xsl" ?> -->
+<doc:doc xmlns:fn="http://www.w3.org/2005/xpath-functions"
+         xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:xhtml="http://www.w3.org/1999/xhtml"
+         xmlns:m="http://www.w3.org/1998/Math/MathML"
+         xmlns:functx="http://www.functx.com"
+         xmlns:nat="http://natbraille.free.fr/xsl"
+         xmlns:doc="espaceDoc"
+         xmlns:saxon="http://icl.com/saxon">
+  
+  
+  
+    <phrase>
+      <lit>
+         <mot>Mathématiques</mot>
+         <mot>niveau</mot>
+         <mot>lycée</mot>
+         <ponctuation>:</ponctuation>
+         <mot>série</mot>
+         <mot>1</mot>
+      </lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="1">
+      <lit>
+         <mot>I</mot>
+         <ponctuation>.</ponctuation>
+         <mot>Équations</mot>
+         <mot>du</mot>
+         <mot>second</mot>
+         <mot>degré</mot>
+      </lit>
+   </titre>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>1</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Solution</mot>
+         <mot>de</mot>
+         <mot>l'équation</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mrow>
+                     <msup>
+                        <mi fontstyle="italic">ax</mi>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">+</mo>
+                     <mi fontstyle="italic">bx</mi>
+                  </mrow>
+                  <mo stretchy="false">+</mo>
+                  <mi>c</mi>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit></lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>avec</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>a</mi>
+         </math><lit><ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>b</mi>
+         </math><lit><ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>c</mi>
+         </math><lit><mot>étant</mot>
+         <mot>trois</mot>
+         <mot>réels</mot>
+         <ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>a</mi>
+               <mo stretchy="false">≠</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>On</mot>
+         <mot>commence</mot>
+         <mot>par</mot>
+         <mot>calculer</mot>
+         <mot>le</mot>
+         <mot>discriminant</mot>
+         <ponctuation>,</ponctuation>
+         <mot>noté</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mo stretchy="false">Δ</mo>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mo stretchy="false">Δ</mo>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <msup>
+                     <mi>b</mi>
+                     <mn>2</mn>
+                  </msup>
+                  <mo stretchy="false">−</mo>
+                  <mn>4ac</mn>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>3</mot>
+         <mot>cas</mot>
+         <mot>possibles</mot>
+         <ponctuation>:</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <ul>
+      <li>
+         <lit>
+            <mot>Si</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mo stretchy="false">Δ</mo>
+                  <mo stretchy="false">&lt;</mo>
+                  <mn>0</mn>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <mot>alors</mot>
+            <mot>l'équation</mot>
+            <mot>n'admet</mot>
+            <mot>pas</mot>
+            <mot>de</mot>
+            <mot>solution</mot>
+            <mot>réelle</mot>
+            <ponctuation>.</ponctuation>
+         </lit>
+      </li>
+   </ul>
+    <ul>
+      <li>
+         <lit>
+            <mot>Si</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mo stretchy="false">Δ</mo>
+                  <mo stretchy="false">=</mo>
+                  <mn>0</mn>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <mot>alors</mot>
+            <mot>l'équation</mot>
+            <mot>admet</mot>
+            <mot>une</mot>
+            <mot>solution</mot>
+            <ponctuation>,</ponctuation>
+            <mot>appelée</mot>
+            <mot>racine</mot>
+            <mot>double</mot>
+            <ponctuation>:</ponctuation>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mi>x</mi>
+                  <mrow>
+                     <mi>'</mi>
+                     <mo stretchy="false">=</mo>
+                     <mi>x</mi>
+                  </mrow>
+                  <mi>'</mi>
+                  <mrow>
+                     <mi>'</mi>
+                     <mo stretchy="false">=</mo>
+                     <mrow>
+                        <mo stretchy="false">−</mo>
+                        <mfrac>
+                           <mi>b</mi>
+                           <mn>2a</mn>
+                        </mfrac>
+                     </mrow>
+                  </mrow>
+               </mrow>
+            </math><lit></lit>
+      </li>
+   </ul>
+    <ul>
+      <li>
+         <lit>
+            <mot>Si</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mo stretchy="false">Δ</mo>
+                  <mo stretchy="false">&gt;</mo>
+                  <mn>0</mn>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <mot>alors</mot>
+            <mot>l'équation</mot>
+            <mot>admet</mot>
+            <mot>deux</mot>
+            <mot>solutions</mot>
+            <ponctuation>(</ponctuation>
+            <mot>ou</mot>
+            <mot>racines</mot>
+            <ponctuation>)</ponctuation>
+            <mot>distinctes</mot>
+            <ponctuation>:</ponctuation>
+         </lit>
+      </li>
+   </ul>
+    <phrase/>
+    <phrase/>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mrow>
+                  <mi>'</mi>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mrow>
+                        <mrow>
+                           <mo stretchy="false">−</mo>
+                           <mi>b</mi>
+                        </mrow>
+                        <mo stretchy="false">−</mo>
+                        <msqrt>
+                           <mrow>
+                              <msup>
+                                 <mi>b</mi>
+                                 <mn>2</mn>
+                              </msup>
+                              <mo stretchy="false">−</mo>
+                              <mn>4ac</mn>
+                           </mrow>
+                        </msqrt>
+                     </mrow>
+                     <mn>2a</mn>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mi>'</mi>
+               <mrow>
+                  <mi>'</mi>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mrow>
+                        <mrow>
+                           <mo stretchy="false">−</mo>
+                           <mi>b</mi>
+                        </mrow>
+                        <mo stretchy="false">+</mo>
+                        <msqrt>
+                           <mo stretchy="false">Δ</mo>
+                        </msqrt>
+                     </mrow>
+                     <mn>2a</mn>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>2</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Factorisation</mot>
+         <mot>d'un</mot>
+         <mot>trinôme</mot>
+         <mot>du</mot>
+         <mot>second</mot>
+         <mot>degré</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>La</mot>
+         <mot>forme</mot>
+         <mot>canonique</mot>
+         <mot>du</mot>
+         <mot>trinôme</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">(</mo>
+                     <mi>x</mi>
+                     <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <mrow>
+                        <msup>
+                           <mi fontstyle="italic">ax</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <mo stretchy="false">+</mo>
+                        <mi fontstyle="italic">bx</mi>
+                     </mrow>
+                     <mo stretchy="false">+</mo>
+                     <mi>c</mi>
+                  </mrow>
+               </mrow>
+            </mrow>
+         </math><lit><mot>correspond</mot>
+         <mot>à</mot>
+         <mot>l'écriture</mot>
+         <mot>suivante</mot>
+         <ponctuation>:</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">(</mo>
+                     <mi>x</mi>
+                     <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <mi>a</mi>
+               </mrow>
+               <mfenced close="]" open="[">
+                  <mrow>
+                     <msup>
+                        <mfenced close=")" open="(">
+                           <mrow>
+                              <mi>x</mi>
+                              <mo stretchy="false">+</mo>
+                              <mfrac>
+                                 <mi>b</mi>
+                                 <mrow>
+                                    <mn>2</mn>
+                                    <mi>a</mi>
+                                 </mrow>
+                              </mfrac>
+                           </mrow>
+                        </mfenced>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mrow>
+                           <mrow>
+                              <msup>
+                                 <mi>b</mi>
+                                 <mn>2</mn>
+                              </msup>
+                              <mo stretchy="false">−</mo>
+                              <mn>4</mn>
+                           </mrow>
+                           <mi>a</mi>
+                           <mi>c</mi>
+                        </mrow>
+                        <mrow>
+                           <mn>4</mn>
+                           <msup>
+                              <mi>a</mi>
+                              <mn>2</mn>
+                           </msup>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>ou</mot>
+         <mot>encore</mot>
+         <ponctuation>:</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">(</mo>
+                     <mi>x</mi>
+                     <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <mi>a</mi>
+               </mrow>
+               <mfenced close="]" open="[">
+                  <mrow>
+                     <msup>
+                        <mfenced close=")" open="(">
+                           <mrow>
+                              <mi>x</mi>
+                              <mo stretchy="false">+</mo>
+                              <mfrac>
+                                 <mi>b</mi>
+                                 <mrow>
+                                    <mn>2</mn>
+                                    <mi>a</mi>
+                                 </mrow>
+                              </mfrac>
+                           </mrow>
+                        </mfenced>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mo stretchy="false">Δ</mo>
+                        <mrow>
+                           <mn>4</mn>
+                           <msup>
+                              <mi>a</mi>
+                              <mn>2</mn>
+                           </msup>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <ul>
+      <li>
+         <lit>
+            <mot>Le</mot>
+            <mot>trinôme</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mi>f</mi>
+                  <mrow>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                     <mo stretchy="false">=</mo>
+                     <mrow>
+                        <mrow>
+                           <msup>
+                              <mi fontstyle="italic">ax</mi>
+                              <mn>2</mn>
+                           </msup>
+                           <mo stretchy="false">+</mo>
+                           <mi fontstyle="italic">bx</mi>
+                        </mrow>
+                        <mo stretchy="false">+</mo>
+                        <mi>c</mi>
+                     </mrow>
+                  </mrow>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <mot>n'est</mot>
+            <mot>pas</mot>
+            <mot>factorisable</mot>
+            <mot>si</mot>
+            <mot>et</mot>
+            <mot>seulement</mot>
+            <mot>si</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">Δ</mo>
+                     <mo stretchy="false">&lt;</mo>
+                     <mn>0</mn>
+                  </mrow>
+                  <mn>.</mn>
+               </mrow>
+            </math><lit></lit>
+      </li>
+   </ul>
+    <ul>
+      <li>
+         <lit>
+            <mot>Le</mot>
+            <mot>trinôme</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mi>f</mi>
+                  <mrow>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                     <mo stretchy="false">=</mo>
+                     <mrow>
+                        <mrow>
+                           <msup>
+                              <mi fontstyle="italic">ax</mi>
+                              <mn>2</mn>
+                           </msup>
+                           <mo stretchy="false">+</mo>
+                           <mi fontstyle="italic">bx</mi>
+                        </mrow>
+                        <mo stretchy="false">+</mo>
+                        <mi>c</mi>
+                     </mrow>
+                  </mrow>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <mot>est</mot>
+            <mot>factorisable</mot>
+            <mot>si</mot>
+            <mot>et</mot>
+            <mot>seulement</mot>
+            <mot>si</mot>
+         </lit>
+         <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+               <mrow>
+                  <mo stretchy="false">Δ</mo>
+                  <mo stretchy="false">≥</mo>
+                  <mn>0</mn>
+               </mrow>
+            </math><lit></lit>
+         <lit>
+            <ponctuation>,</ponctuation>
+            <mot>et</mot>
+            <mot>alors</mot>
+            <ponctuation>:</ponctuation>
+         </lit>
+      </li>
+   </ul>
+    <ul>
+      <li>
+         <ul>
+            <li>
+               <lit>
+                  <mot>Si</mot>
+               </lit>
+               <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                     <mrow>
+                        <mo stretchy="false">Δ</mo>
+                        <mo stretchy="false">&gt;</mo>
+                        <mn>0</mn>
+                     </mrow>
+                  </math><lit></lit>
+               <lit>
+                  <mot>alors</mot>
+                  <ponctuation>:</ponctuation>
+               </lit>
+               <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                     <mrow>
+                        <mi>f</mi>
+                        <mrow>
+                           <mrow>
+                              <mrow>
+                                 <mo stretchy="false">(</mo>
+                                 <mi>x</mi>
+                                 <mo stretchy="false">)</mo>
+                              </mrow>
+                              <mo stretchy="false">=</mo>
+                              <mrow>
+                                 <mrow>
+                                    <msup>
+                                       <mi fontstyle="italic">ax</mi>
+                                       <mn>2</mn>
+                                    </msup>
+                                    <mo stretchy="false">+</mo>
+                                    <mi fontstyle="italic">bx</mi>
+                                 </mrow>
+                                 <mo stretchy="false">+</mo>
+                                 <mi>c</mi>
+                              </mrow>
+                           </mrow>
+                           <mo stretchy="false">=</mo>
+                           <mi>a</mi>
+                        </mrow>
+                        <mrow>
+                           <mo stretchy="false">(</mo>
+                           <mrow>
+                              <mrow>
+                                 <mi>x</mi>
+                                 <mo stretchy="false">−</mo>
+                                 <mi>x</mi>
+                              </mrow>
+                              <mi>'</mi>
+                           </mrow>
+                           <mo stretchy="false">)</mo>
+                        </mrow>
+                        <mrow>
+                           <mo stretchy="false">(</mo>
+                           <mrow>
+                              <mrow>
+                                 <mi>x</mi>
+                                 <mo stretchy="false">−</mo>
+                                 <mi>x</mi>
+                              </mrow>
+                              <mi>'</mi>
+                              <mi>'</mi>
+                           </mrow>
+                           <mo stretchy="false">)</mo>
+                        </mrow>
+                     </mrow>
+                  </math><lit></lit>
+            </li>
+         </ul>
+      </li>
+   </ul>
+    <ul>
+      <li>
+         <ul>
+            <li>
+               <lit>
+                  <mot>Si</mot>
+               </lit>
+               <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                     <mrow>
+                        <mo stretchy="false">Δ</mo>
+                        <mo stretchy="false">=</mo>
+                        <mn>0</mn>
+                     </mrow>
+                  </math><lit></lit>
+               <lit>
+                  <mot>alors</mot>
+                  <ponctuation>:</ponctuation>
+               </lit>
+               <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+                     <mrow>
+                        <mi>f</mi>
+                        <mrow>
+                           <mrow>
+                              <mrow>
+                                 <mo stretchy="false">(</mo>
+                                 <mi>x</mi>
+                                 <mo stretchy="false">)</mo>
+                              </mrow>
+                              <mo stretchy="false">=</mo>
+                              <mrow>
+                                 <mrow>
+                                    <msup>
+                                       <mi fontstyle="italic">ax</mi>
+                                       <mn>2</mn>
+                                    </msup>
+                                    <mo stretchy="false">+</mo>
+                                    <mi fontstyle="italic">bx</mi>
+                                 </mrow>
+                                 <mo stretchy="false">+</mo>
+                                 <mi>c</mi>
+                              </mrow>
+                           </mrow>
+                           <mo stretchy="false">=</mo>
+                           <mi>a</mi>
+                        </mrow>
+                        <msup>
+                           <mrow>
+                              <mo stretchy="false">(</mo>
+                              <mrow>
+                                 <mrow>
+                                    <mi>x</mi>
+                                    <mo stretchy="false">−</mo>
+                                    <mi>x</mi>
+                                 </mrow>
+                                 <mi>'</mi>
+                              </mrow>
+                              <mo stretchy="false">)</mo>
+                           </mrow>
+                           <mn>2</mn>
+                        </msup>
+                     </mrow>
+                  </math><lit></lit>
+            </li>
+         </ul>
+      </li>
+   </ul>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>3</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Sens</mot>
+         <mot>de</mot>
+         <mot>variation</mot>
+         <mot>de</mot>
+         <mot>la</mot>
+         <mot>fonction</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">(</mo>
+                     <mi>x</mi>
+                     <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <mrow>
+                        <msup>
+                           <mi fontstyle="italic">ax</mi>
+                           <mn>2</mn>
+                        </msup>
+                        <mo stretchy="false">+</mo>
+                        <mi fontstyle="italic">bx</mi>
+                     </mrow>
+                     <mo stretchy="false">+</mo>
+                     <mi>c</mi>
+                  </mrow>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>a</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Si</mot>
+         <ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>a</mi>
+               <mo stretchy="false">&gt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><mot>alors</mot>
+         <mot>la</mot>
+         <mot>fonction</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>f</mi>
+         </math><lit><mot>est</mot>
+         <mot>décroissante</mot>
+         <mot>sur</mot>
+         <mot>l'intervalle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mfenced close="]" open="]">
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mo stretchy="false">∞</mo>
+                  </mrow>
+                  <mrow>
+                     <mi>;</mi>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mrow>
+                           <mn>2</mn>
+                           <mi>a</mi>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mrow>
+            </mfenced>
+         </math><lit><mot>et</mot>
+         <mot>croissante</mot>
+         <mot>sur</mot>
+         <mot>l'intervalle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mfenced close="[" open="[">
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mn>2a</mn>
+                     </mfrac>
+                  </mrow>
+                  <mrow>
+                     <mi>;</mi>
+                     <mo stretchy="false">+</mo>
+                     <mo stretchy="false">∞</mo>
+                  </mrow>
+               </mrow>
+            </mfenced>
+         </math><lit><ponctuation>.</ponctuation>
+         <mot>La</mot>
+         <mot>fonction</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>f</mi>
+         </math><lit><mot>admet</mot>
+         <mot>un</mot>
+         <mot>minimum</mot>
+         <mot>absolu</mot>
+         <mot>en</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mo stretchy="false">−</mo>
+                  <mfrac>
+                     <mi>b</mi>
+                     <mrow>
+                        <mn>2</mn>
+                        <mi>a</mi>
+                     </mrow>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit><mot>de</mot>
+         <mot>valeur</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mrow>
+                           <mn>2</mn>
+                           <mi>a</mi>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>Tableau</mot>
+         <mot>de</mot>
+         <mot>variation</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <ponctuation>[</ponctuation>
+         <mot>Objet33</mot>
+         <ponctuation>]</ponctuation>
+         <mot>Conversion</mot>
+         <mot>de</mot>
+         <mot>l'image</mot>
+         <mot>en</mot>
+         <mot>Braille</mot>
+         <mot>en</mot>
+         <mot>annexe</mot>
+         <mot>1</mot>
+      </lit>
+   </phrase>
+    <phrase/>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>2</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Si</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>a</mi>
+               <mo stretchy="false">&lt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>alors</mot>
+         <mot>la</mot>
+         <mot>fonction</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>f</mi>
+         </math><lit><mot>est</mot>
+         <mot>croissante</mot>
+         <mot>sur</mot>
+         <mot>l'intervalle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mfenced close="]" open="]">
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mo stretchy="false">∞</mo>
+                  </mrow>
+                  <mrow>
+                     <mi>;</mi>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mrow>
+                           <mn>2</mn>
+                           <mi>a</mi>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mrow>
+            </mfenced>
+         </math><lit><mot>et</mot>
+         <mot>décroissante</mot>
+         <mot>sur</mot>
+         <mot>l'intervalle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mfenced close="[" open="[">
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mn>2a</mn>
+                     </mfrac>
+                  </mrow>
+                  <mrow>
+                     <mi>;</mi>
+                     <mo stretchy="false">+</mo>
+                     <mo stretchy="false">∞</mo>
+                  </mrow>
+               </mrow>
+            </mfenced>
+         </math><lit><ponctuation>.</ponctuation>
+         <mot>La</mot>
+         <mot>fonction</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>f</mi>
+         </math><lit><mot>admet</mot>
+         <mot>un</mot>
+         <mot>maximum</mot>
+         <mot>absolu</mot>
+         <mot>en</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mo stretchy="false">−</mo>
+                  <mfrac>
+                     <mi>b</mi>
+                     <mrow>
+                        <mn>2</mn>
+                        <mi>a</mi>
+                     </mrow>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit><mot>de</mot>
+         <mot>valeur</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>f</mi>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mfrac>
+                        <mi>b</mi>
+                        <mrow>
+                           <mn>2</mn>
+                           <mi>a</mi>
+                        </mrow>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>Tableau</mot>
+         <mot>de</mot>
+         <mot>variation</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <ponctuation>[</ponctuation>
+         <mot>Objet41</mot>
+         <ponctuation>]</ponctuation>
+         <mot>Conversion</mot>
+         <mot>de</mot>
+         <mot>l'image</mot>
+         <mot>en</mot>
+         <mot>Braille</mot>
+         <mot>en</mot>
+         <mot>annexe</mot>
+         <mot>2</mot>
+      </lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>Remarque</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mo stretchy="false">α</mo>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mrow>
+                        <mi>x</mi>
+                        <mrow>
+                           <mi>'</mi>
+                           <mo stretchy="false">+</mo>
+                           <mi>x</mi>
+                        </mrow>
+                        <mi>'</mi>
+                        <mi>'</mi>
+                     </mrow>
+                     <mn>2</mn>
+                  </mfrac>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mo stretchy="false">−</mo>
+                  <mfrac>
+                     <mi>b</mi>
+                     <mrow>
+                        <mn>2</mn>
+                        <mi>a</mi>
+                     </mrow>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="1">
+      <lit>
+         <mot>II</mot>
+         <ponctuation>.</ponctuation>
+         <mot>Nombres</mot>
+         <mot>complexes</mot>
+      </lit>
+   </titre>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>1</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mo stretchy="false">∣</mo>
+                  <mrow>
+                     <mi>z</mi>
+                     <mo stretchy="false">−</mo>
+                     <mn>3</mn>
+                  </mrow>
+                  <mo stretchy="false">∣</mo>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mfenced close="∣" open="∣">
+                  <mrow>
+                     <mover accent="true">
+                        <mi>z</mi>
+                        <mo stretchy="false">ˉ</mo>
+                     </mover>
+                     <mo stretchy="false">+</mo>
+                     <mfrac>
+                        <mi>i</mi>
+                        <mn>2</mn>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </titre>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi fontstyle="italic">arg</mi>
+               <mrow>
+                  <mfenced close=")" open="(">
+                     <mfenced close="∣" open="∣">
+                        <mfrac>
+                           <mrow>
+                              <mover accent="true">
+                                 <mrow>
+                                    <mrow>
+                                       <mi>z</mi>
+                                       <mo stretchy="false">+</mo>
+                                       <mn>1</mn>
+                                    </mrow>
+                                    <mo stretchy="false">−</mo>
+                                    <mn>2i</mn>
+                                 </mrow>
+                                 <mo>¯</mo>
+                              </mover>
+                              <mo stretchy="false">+</mo>
+                              <mn>4</mn>
+                           </mrow>
+                           <mrow>
+                              <mi>z</mi>
+                              <mo stretchy="false">+</mo>
+                              <mover accent="true">
+                                 <mrow>
+                                    <mfrac>
+                                       <mn>3</mn>
+                                       <mn>2</mn>
+                                    </mfrac>
+                                    <mo stretchy="false">−</mo>
+                                    <mn>5i</mn>
+                                 </mrow>
+                                 <mo>¯</mo>
+                              </mover>
+                           </mrow>
+                        </mfrac>
+                     </mfenced>
+                  </mfenced>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mo stretchy="false">π</mo>
+                     <mn>6</mn>
+                  </mfrac>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>2</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Dans</mot>
+         <mot>certaines</mot>
+         <mot>conditions</mot>
+         <ponctuation>,</ponctuation>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>l'équation</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mo stretchy="false">(</mo>
+               <mi>E</mi>
+               <mo stretchy="false">)</mo>
+            </mrow>
+         </math><lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <msup>
+                  <mi>x</mi>
+                  <mn>3</mn>
+               </msup>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mi fontstyle="italic">px</mi>
+                  <mo stretchy="false">+</mo>
+                  <mi>q</mi>
+               </mrow>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>p</mi>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>q</mi>
+         </math><lit><mot>réels</mot>
+         <mot>données</mot>
+         <ponctuation>,</ponctuation>
+         <mot>admet</mot>
+         <mot>le</mot>
+         <mot>réel</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mroot>
+                  <mrow>
+                     <mfrac>
+                        <mi>q</mi>
+                        <mn>2</mn>
+                     </mfrac>
+                     <mo stretchy="false">+</mo>
+                     <msqrt>
+                        <mrow>
+                           <mfrac>
+                              <msup>
+                                 <mi>q</mi>
+                                 <mn>2</mn>
+                              </msup>
+                              <mn>4</mn>
+                           </mfrac>
+                           <mo stretchy="false">−</mo>
+                           <mfrac>
+                              <msup>
+                                 <mi>p</mi>
+                                 <mn>3</mn>
+                              </msup>
+                              <mn>27</mn>
+                           </mfrac>
+                        </mrow>
+                     </msqrt>
+                  </mrow>
+                  <mn>3</mn>
+               </mroot>
+               <mo stretchy="false">+</mo>
+               <mroot>
+                  <mrow>
+                     <mfrac>
+                        <mi>q</mi>
+                        <mn>2</mn>
+                     </mfrac>
+                     <mo stretchy="false">−</mo>
+                     <msqrt>
+                        <mrow>
+                           <mfrac>
+                              <msup>
+                                 <mi>q</mi>
+                                 <mn>2</mn>
+                              </msup>
+                              <mn>4</mn>
+                           </mfrac>
+                           <mo stretchy="false">−</mo>
+                           <mfrac>
+                              <msup>
+                                 <mi>p</mi>
+                                 <mn>3</mn>
+                              </msup>
+                              <mn>27</mn>
+                           </mfrac>
+                        </mrow>
+                     </msqrt>
+                  </mrow>
+                  <mn>3</mn>
+               </mroot>
+            </mrow>
+         </math><lit><mot>comme</mot>
+         <mot>racine</mot>
+         <ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>3</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mrow>
+                     <msup>
+                        <mi fontstyle="normal">e</mi>
+                        <mrow>
+                           <mi>i</mi>
+                           <mfrac>
+                              <mo stretchy="false">π</mo>
+                              <mn>3</mn>
+                           </mfrac>
+                        </mrow>
+                     </msup>
+                     <mo stretchy="false">+</mo>
+                     <msup>
+                        <mi>e</mi>
+                        <mrow>
+                           <mi>i</mi>
+                           <mfrac>
+                              <mrow>
+                                 <mn>2</mn>
+                                 <mo stretchy="false">π</mo>
+                              </mrow>
+                              <mn>3</mn>
+                           </mfrac>
+                        </mrow>
+                     </msup>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <msqrt>
+                     <mn>3</mn>
+                  </msqrt>
+               </mrow>
+               <mi>i</mi>
+            </mrow>
+         </math><lit></lit>
+   </titre>
+    <phrase/>
+    <titre niveauOrig="1">
+      <lit>
+         <mot>III</mot>
+         <ponctuation>.</ponctuation>
+         <mot>Fonctions</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>1</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>I</mi>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <munderover>
+                        <mo stretchy="false">∫</mo>
+                        <mfrac>
+                           <mo stretchy="false">π</mo>
+                           <mn>2</mn>
+                        </mfrac>
+                        <mfrac>
+                           <mo stretchy="false">π</mo>
+                           <mn>2</mn>
+                        </mfrac>
+                     </munderover>
+                     <msup>
+                        <mi fontstyle="normal">e</mi>
+                        <mi>x</mi>
+                     </msup>
+                  </mrow>
+               </mrow>
+               <mi>sin</mi>
+               <mi>x</mi>
+               <mi fontstyle="italic">dx</mi>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <msub>
+                     <mi>J</mi>
+                     <mi>n</mi>
+                  </msub>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <munderover>
+                        <mo stretchy="false">∫</mo>
+                        <mn>0</mn>
+                        <mn>1</mn>
+                     </munderover>
+                     <msup>
+                        <mi>t</mi>
+                        <mrow>
+                           <mi>n</mi>
+                           <mo stretchy="false">+</mo>
+                           <mn>1</mn>
+                        </mrow>
+                     </msup>
+                  </mrow>
+               </mrow>
+               <msup>
+                  <mi>e</mi>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mi>t</mi>
+                  </mrow>
+               </msup>
+               <mi fontstyle="italic">dt</mi>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>2</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>S</mi>
+         </math><lit><mot>est</mot>
+         <mot>la</mot>
+         <mot>sphère</mot>
+         <mot>de</mot>
+         <mot>centre</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>O</mi>
+         </math><lit><mot>et</mot>
+         <mot>de</mot>
+         <mot>rayon</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>R</mi>
+               <mo stretchy="false">&gt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+         <mot>Pour</mot>
+         <mot>tout</mot>
+         <mot>réel</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>z</mi>
+         </math><lit><mot>tel</mot>
+         <mot>que</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mi>R</mi>
+                  </mrow>
+                  <mo stretchy="false">≤</mo>
+                  <mi>z</mi>
+               </mrow>
+               <mo stretchy="false">≤</mo>
+               <mi>R</mi>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>le</mot>
+         <mot>plan</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>P</mi>
+         </math><lit><mot>parallèle</mot>
+         <mot>à</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mo stretchy="false">(</mo>
+               <mi fontstyle="italic">OIJ</mi>
+               <mo stretchy="false">)</mo>
+            </mrow>
+         </math><lit><mot>de</mot>
+         <mot>cote</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>z</mi>
+         </math><lit><mot>coupe</mot>
+         <mot>la</mot>
+         <mot>sphère</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>S</mi>
+         </math><lit><mot>suivant</mot>
+         <mot>le</mot>
+         <mot>cercle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <msub>
+               <mi>C</mi>
+               <mi>z</mi>
+            </msub>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>L'aire</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <msub>
+               <mi>A</mi>
+               <mi>z</mi>
+            </msub>
+         </math><lit><mot>du</mot>
+         <mot>cercle</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <msub>
+               <mi>C</mi>
+               <mi>z</mi>
+            </msub>
+         </math><lit><mot>en</mot>
+         <mot>fonction</mot>
+         <mot>de</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>R</mi>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>z</mi>
+         </math><lit><mot>est</mot>
+         <mot>égale</mot>
+         <mot>à</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <msub>
+                     <mi>A</mi>
+                     <mi>z</mi>
+                  </msub>
+                  <mo stretchy="false">=</mo>
+                  <mo stretchy="false">π</mo>
+               </mrow>
+               <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mrow>
+                     <msup>
+                        <mi>R</mi>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">−</mo>
+                     <msup>
+                        <mi>z</mi>
+                        <mn>2</mn>
+                     </msup>
+                  </mrow>
+                  <mo stretchy="false">)</mo>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>Et</mot>
+         <ponctuation>,</ponctuation>
+         <mot>le</mot>
+         <mot>volume</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>V</mi>
+         </math><lit><mot>de</mot>
+         <mot>la</mot>
+         <mot>sphère</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>S</mi>
+         </math><lit><mot>est</mot>
+         <mot>donnée</mot>
+         <mot>par</mot>
+         <mot>l'intégrale</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>V</mi>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <munderover>
+                        <mo stretchy="false">∫</mo>
+                        <mrow>
+                           <mo stretchy="false">−</mo>
+                           <mi>R</mi>
+                        </mrow>
+                        <mi>R</mi>
+                     </munderover>
+                     <mi>A</mi>
+                  </mrow>
+               </mrow>
+               <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mi>z</mi>
+                  <mo stretchy="false">)</mo>
+               </mrow>
+               <mi fontstyle="italic">dz</mi>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>On</mot>
+         <mot>retrouve</mot>
+         <mot>la</mot>
+         <mot>formule</mot>
+         <mot>bien</mot>
+         <mot>connue</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>V</mi>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mn>4</mn>
+                     <mn>3</mn>
+                  </mfrac>
+               </mrow>
+               <mo stretchy="false">π</mo>
+               <msup>
+                  <mi>R</mi>
+                  <mn>3</mn>
+               </msup>
+            </mrow>
+         </math><lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>V</mi>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mn>4</mn>
+                     <mn>3</mn>
+                  </mfrac>
+               </mrow>
+               <mo stretchy="false">π</mo>
+               <msup>
+                  <mi>R</mi>
+                  <mn>3</mn>
+               </msup>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>3</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <munder>
+                     <mi>lim</mi>
+                     <mrow>
+                        <mi>h</mi>
+                        <mo stretchy="false">→</mo>
+                        <mn>0</mn>
+                     </mrow>
+                  </munder>
+                  <mfrac>
+                     <mrow>
+                        <msup>
+                           <mi>e</mi>
+                           <mi>h</mi>
+                        </msup>
+                        <mo stretchy="false">−</mo>
+                        <mn>1</mn>
+                     </mrow>
+                     <mi>h</mi>
+                  </mfrac>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mn>1</mn>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>4</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Montrer</mot>
+         <mot>que</mot>
+         <mot>si</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>n</mi>
+               <mo stretchy="false">∈</mo>
+               <mo stretchy="false">ℕ</mo>
+            </mrow>
+         </math><lit><mot>ERREUR</mot>
+         <mot>N*</mot>
+         <mot>et</mot>
+         <mot>si</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mo stretchy="false">&gt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>alors</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mfrac>
+                  <msup>
+                     <mi>e</mi>
+                     <mi>x</mi>
+                  </msup>
+                  <msup>
+                     <mi>x</mi>
+                     <mi>n</mi>
+                  </msup>
+               </mfrac>
+               <mo stretchy="false">=</mo>
+               <msup>
+                  <mi>e</mi>
+                  <mrow>
+                     <mi>x</mi>
+                     <mfenced close="]" open="[">
+                        <mrow>
+                           <mrow>
+                              <mn>1</mn>
+                              <mo stretchy="false">−</mo>
+                              <mi>n</mi>
+                           </mrow>
+                           <mfrac>
+                              <mrow>
+                                 <mi>ln</mi>
+                                 <mi>x</mi>
+                              </mrow>
+                              <mi>x</mi>
+                           </mfrac>
+                        </mrow>
+                     </mfenced>
+                  </mrow>
+               </msup>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>En</mot>
+         <mot>déduire</mot>
+         <mot>que</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <munder>
+                     <mi>lim</mi>
+                     <mrow>
+                        <mi>x</mi>
+                        <mrow>
+                           <mo stretchy="false">→</mo>
+                           <mo stretchy="false">+</mo>
+                           <mo stretchy="false">∞</mo>
+                        </mrow>
+                     </mrow>
+                  </munder>
+                  <mfrac>
+                     <msup>
+                        <mi>e</mi>
+                        <mi>x</mi>
+                     </msup>
+                     <msup>
+                        <mi>x</mi>
+                        <mi>n</mi>
+                     </msup>
+                  </mfrac>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mo stretchy="false">+</mo>
+                  <mo stretchy="false">∞</mo>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>5</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Vérifier</mot>
+         <mot>que</mot>
+         <ponctuation>,</ponctuation>
+         <mot>pour</mot>
+         <mot>tout</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mo stretchy="false">&gt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>on</mot>
+         <mot>a</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mfrac>
+                     <mrow>
+                        <mi>ln</mi>
+                        <mrow>
+                           <mo stretchy="false">(</mo>
+                           <mi>x</mi>
+                           <mo stretchy="false">)</mo>
+                        </mrow>
+                     </mrow>
+                     <msup>
+                        <mi>x</mi>
+                        <mi>n</mi>
+                     </msup>
+                  </mfrac>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mn>1</mn>
+                     <mi>n</mi>
+                  </mfrac>
+               </mrow>
+               <mfrac>
+                  <mrow>
+                     <mi>ln</mi>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <msup>
+                           <mi>x</mi>
+                           <mi>n</mi>
+                        </msup>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                  </mrow>
+                  <msup>
+                     <mi>x</mi>
+                     <mi>n</mi>
+                  </msup>
+               </mfrac>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>6</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Pour</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>n</mi>
+               <mo stretchy="false">≥</mo>
+               <mn>2</mn>
+            </mrow>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>x</mi>
+               <mo stretchy="false">&gt;</mo>
+               <mn>0</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>vérifier</mot>
+         <mot>que</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mfrac>
+                  <mrow>
+                     <msub>
+                        <mi>f</mi>
+                        <mi>n</mi>
+                     </msub>
+                     <mrow>
+                        <mrow>
+                           <mo stretchy="false">(</mo>
+                           <mi>x</mi>
+                           <mo stretchy="false">)</mo>
+                        </mrow>
+                        <mo stretchy="false">−</mo>
+                        <msub>
+                           <mi>f</mi>
+                           <mi>n</mi>
+                        </msub>
+                     </mrow>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mn>0</mn>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                  </mrow>
+                  <mi>x</mi>
+               </mfrac>
+               <mo stretchy="false">=</mo>
+               <msup>
+                  <mi>e</mi>
+                  <mrow>
+                     <mfenced close=")" open="(">
+                        <mrow>
+                           <mfrac>
+                              <mn>1</mn>
+                              <mi>n</mi>
+                           </mfrac>
+                           <mo stretchy="false">−</mo>
+                           <mn>1</mn>
+                        </mrow>
+                     </mfenced>
+                     <mi>ln</mi>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mi>x</mi>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                  </mrow>
+               </msup>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>7</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>t</mi>
+                  <mo stretchy="false">=</mo>
+                  <mi>K</mi>
+               </mrow>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <msup>
+                        <mi>h</mi>
+                        <mfrac>
+                           <mn>5</mn>
+                           <mn>2</mn>
+                        </mfrac>
+                     </msup>
+                     <mo stretchy="false">−</mo>
+                     <msup>
+                        <mi>z</mi>
+                        <mfrac>
+                           <mn>5</mn>
+                           <mn>2</mn>
+                        </mfrac>
+                     </msup>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit><mot>avec</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>K</mi>
+                  <mo stretchy="false">=</mo>
+                  <mfrac>
+                     <mrow>
+                        <mn>2</mn>
+                        <mo stretchy="false">π</mo>
+                     </mrow>
+                     <mn>3</mn>
+                  </mfrac>
+               </mrow>
+               <mfrac>
+                  <mrow>
+                     <msup>
+                        <mi>tan</mi>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">α</mo>
+                  </mrow>
+                  <mrow>
+                     <mi>A</mi>
+                     <msqrt>
+                        <mrow>
+                           <mn>2</mn>
+                           <mi>g</mi>
+                        </mrow>
+                     </msqrt>
+                  </mrow>
+               </mfrac>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="1">
+      <lit>
+         <mot>IV</mot>
+         <ponctuation>.</ponctuation>
+         <mot>Matrices</mot>
+      </lit>
+   </titre>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>1</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Formule</mot>
+         <mot>du</mot>
+         <mot>binôme</mot>
+         <mot>de</mot>
+         <mot>Newton</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <msup>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mrow>
+                           <mi>a</mi>
+                           <mo stretchy="false">+</mo>
+                           <mi>b</mi>
+                        </mrow>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                     <mi>n</mi>
+                  </msup>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <msup>
+                        <mi>a</mi>
+                        <mi>n</mi>
+                     </msup>
+                     <mo stretchy="false">+</mo>
+                     <mfenced close=")" open="(">
+                        <mtable>
+                           <mtr>
+                              <mi>n</mi>
+                           </mtr>
+                           <mtr>
+                              <mn>1</mn>
+                           </mtr>
+                        </mtable>
+                     </mfenced>
+                  </mrow>
+               </mrow>
+               <msup>
+                  <mi>a</mi>
+                  <mrow>
+                     <mi>n</mi>
+                     <mo stretchy="false">−</mo>
+                     <mn>1</mn>
+                  </mrow>
+               </msup>
+               <mrow>
+                  <mi>b</mi>
+                  <mo stretchy="false">+</mo>
+                  <mfenced close=")" open="(">
+                     <mtable>
+                        <mtr>
+                           <mi>n</mi>
+                        </mtr>
+                        <mtr>
+                           <mn>2</mn>
+                        </mtr>
+                     </mtable>
+                  </mfenced>
+               </mrow>
+               <msup>
+                  <mi>a</mi>
+                  <mrow>
+                     <mi>n</mi>
+                     <mo stretchy="false">−</mo>
+                     <mn>2</mn>
+                  </mrow>
+               </msup>
+               <mrow>
+                  <mrow>
+                     <msup>
+                        <mi>b</mi>
+                        <mn>2</mn>
+                     </msup>
+                     <mo stretchy="false">+</mo>
+                     <mo stretchy="false">…</mo>
+                  </mrow>
+                  <mo stretchy="false">+</mo>
+                  <mfenced close=")" open="(">
+                     <mtable>
+                        <mtr>
+                           <mi>n</mi>
+                        </mtr>
+                        <mtr>
+                           <mrow>
+                              <mi>n</mi>
+                              <mo stretchy="false">−</mo>
+                              <mn>1</mn>
+                           </mrow>
+                        </mtr>
+                     </mtable>
+                  </mfenced>
+               </mrow>
+               <mrow>
+                  <msup>
+                     <mi fontstyle="italic">ab</mi>
+                     <mrow>
+                        <mi>n</mi>
+                        <mo stretchy="false">−</mo>
+                        <mn>1</mn>
+                     </mrow>
+                  </msup>
+                  <mo stretchy="false">+</mo>
+                  <msup>
+                     <mi>b</mi>
+                     <mi>n</mi>
+                  </msup>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>ou</mot>
+         <mot>encore</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <msup>
+                     <mrow>
+                        <mo stretchy="false">(</mo>
+                        <mrow>
+                           <mi>a</mi>
+                           <mo stretchy="false">+</mo>
+                           <mi>b</mi>
+                        </mrow>
+                        <mo stretchy="false">)</mo>
+                     </mrow>
+                     <mi>n</mi>
+                  </msup>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <munderover>
+                        <mo stretchy="false">∑</mo>
+                        <mrow>
+                           <mi>k</mi>
+                           <mo stretchy="false">=</mo>
+                           <mn>0</mn>
+                        </mrow>
+                        <mi>n</mi>
+                     </munderover>
+                     <mfenced close=")" open="(">
+                        <mtable>
+                           <mtr>
+                              <mi>n</mi>
+                           </mtr>
+                           <mtr>
+                              <mi>k</mi>
+                           </mtr>
+                        </mtable>
+                     </mfenced>
+                  </mrow>
+               </mrow>
+               <msup>
+                  <mi>a</mi>
+                  <mrow>
+                     <mi>n</mi>
+                     <mo stretchy="false">−</mo>
+                     <mi>k</mi>
+                  </mrow>
+               </msup>
+               <msup>
+                  <mi>b</mi>
+                  <mi>k</mi>
+               </msup>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mi>p</mi>
+                     </mtr>
+                     <mtr>
+                        <mi>n</mi>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mfenced close=")" open="(">
+                     <mtable>
+                        <mtr>
+                           <mrow>
+                              <mi>p</mi>
+                              <mo stretchy="false">−</mo>
+                              <mn>1</mn>
+                           </mrow>
+                        </mtr>
+                        <mtr>
+                           <mrow>
+                              <mi>n</mi>
+                              <mo stretchy="false">−</mo>
+                              <mn>1</mn>
+                           </mrow>
+                        </mtr>
+                     </mtable>
+                  </mfenced>
+                  <mo stretchy="false">+</mo>
+                  <mfenced close=")" open="(">
+                     <mtable>
+                        <mtr>
+                           <mi>p</mi>
+                        </mtr>
+                        <mtr>
+                           <mrow>
+                              <mi>n</mi>
+                              <mo stretchy="false">−</mo>
+                              <mn>1</mn>
+                           </mrow>
+                        </mtr>
+                     </mtable>
+                  </mfenced>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>2</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Soit</mot>
+         <mot>la</mot>
+         <mot>matrice</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>A</mi>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mn>3</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>5</mn>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>2</mn>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>Trouvez</mot>
+         <mot>la</mot>
+         <mot>matrice</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>B</mi>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mi>a</mi>
+                        </mtd>
+                        <mtd>
+                           <mi>b</mi>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mi>c</mi>
+                        </mtd>
+                        <mtd>
+                           <mi>d</mi>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit><mot>telle</mot>
+         <mot>que</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>A</mi>
+                  <mo stretchy="false">×</mo>
+                  <mi>B</mi>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <msub>
+                  <mi>I</mi>
+                  <mn>2</mn>
+               </msub>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mrow>
+                     <mi>A</mi>
+                     <mo stretchy="false">×</mo>
+                     <mi>B</mi>
+                  </mrow>
+                  <mo stretchy="false">=</mo>
+                  <mrow>
+                     <mfenced close=")" open="(">
+                        <mtable>
+                           <mtr>
+                              <mtd>
+                                 <mn>3</mn>
+                              </mtd>
+                              <mtd>
+                                 <mn>5</mn>
+                              </mtd>
+                           </mtr>
+                           <mtr>
+                              <mtd>
+                                 <mn>1</mn>
+                              </mtd>
+                              <mtd>
+                                 <mn>2</mn>
+                              </mtd>
+                           </mtr>
+                        </mtable>
+                     </mfenced>
+                     <mo stretchy="false">×</mo>
+                     <mfenced close=")" open="(">
+                        <mtable>
+                           <mtr>
+                              <mtd>
+                                 <mi>a</mi>
+                              </mtd>
+                              <mtd>
+                                 <mi>b</mi>
+                              </mtd>
+                           </mtr>
+                           <mtr>
+                              <mtd>
+                                 <mi>c</mi>
+                              </mtd>
+                              <mtd>
+                                 <mi>d</mi>
+                              </mtd>
+                           </mtr>
+                        </mtable>
+                     </mfenced>
+                  </mrow>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mrow>
+                              <mn>3</mn>
+                              <mrow>
+                                 <mi>a</mi>
+                                 <mo stretchy="false">+</mo>
+                                 <mn>5</mn>
+                              </mrow>
+                              <mi>c</mi>
+                           </mrow>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mn>3</mn>
+                              <mrow>
+                                 <mi>b</mi>
+                                 <mo stretchy="false">+</mo>
+                                 <mn>5</mn>
+                              </mrow>
+                              <mi>d</mi>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mrow>
+                              <mrow>
+                                 <mi>a</mi>
+                                 <mo stretchy="false">+</mo>
+                                 <mn>2</mn>
+                              </mrow>
+                              <mi>c</mi>
+                           </mrow>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mi>b</mi>
+                              <mo stretchy="false">+</mo>
+                              <mn>2d</mn>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>On</mot>
+         <mot>doit</mot>
+         <mot>avoir</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mrow>
+                  <mi>A</mi>
+                  <mo stretchy="false">×</mo>
+                  <mi>B</mi>
+               </mrow>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation>
+         <mot>donc</mot>
+         <ponctuation>:</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mfenced close="}" open="{">
+               <mtable>
+                  <mtr>
+                     <mrow>
+                        <mrow>
+                           <mn>3a</mn>
+                           <mo stretchy="false">+</mo>
+                           <mn>5c</mn>
+                        </mrow>
+                        <mo stretchy="false">=</mo>
+                        <mn>1</mn>
+                     </mrow>
+                  </mtr>
+                  <mtr>
+                     <mrow>
+                        <mrow>
+                           <mi>a</mi>
+                           <mo stretchy="false">+</mo>
+                           <mn>2c</mn>
+                        </mrow>
+                        <mo stretchy="false">=</mo>
+                        <mn>0</mn>
+                     </mrow>
+                  </mtr>
+                  <mtr>
+                     <mrow>
+                        <mrow>
+                           <mn>3b</mn>
+                           <mo stretchy="false">+</mo>
+                           <mn>5d</mn>
+                        </mrow>
+                        <mo stretchy="false">=</mo>
+                        <mn>0</mn>
+                     </mrow>
+                  </mtr>
+                  <mtr>
+                     <mrow>
+                        <mrow>
+                           <mi>b</mi>
+                           <mo stretchy="false">+</mo>
+                           <mn>2d</mn>
+                        </mrow>
+                        <mo stretchy="false">=</mo>
+                        <mn>1</mn>
+                     </mrow>
+                  </mtr>
+               </mtable>
+            </mfenced>
+         </math><lit><mot>ERREUR</mot>
+         <mot>système</mot>
+         <mot>donc</mot>
+         <mot>une</mot>
+         <mot>seule</mot>
+         <mot>accolade</mot>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>On</mot>
+         <mot>trouve</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>a</mi>
+               <mo stretchy="false">=</mo>
+               <mn>2</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>b</mi>
+               <mo stretchy="false">=</mo>
+               <mn>5</mn>
+            </mrow>
+         </math><lit><ponctuation>,</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>c</mi>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mo stretchy="false">−</mo>
+                  <mn>1</mn>
+               </mrow>
+            </mrow>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>d</mi>
+               <mo stretchy="false">=</mo>
+               <mn>3</mn>
+            </mrow>
+         </math><lit><ponctuation>.</ponctuation>
+      </lit>
+   </phrase>
+    <phrase>
+      <lit>
+         <mot>On</mot>
+         <mot>dit</mot>
+         <mot>que</mot>
+         <mot>la</mot>
+         <mot>matrice</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mi>A</mi>
+         </math><lit><mot>est</mot>
+         <mot>inversible</mot>
+         <ponctuation>,</ponctuation>
+         <mot>et</mot>
+         <ponctuation>:</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <msup>
+                  <mi>A</mi>
+                  <mrow>
+                     <mo stretchy="false">−</mo>
+                     <mn>1</mn>
+                  </mrow>
+               </msup>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mn>2</mn>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mn>5</mn>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mn>1</mn>
+                           </mrow>
+                        </mtd>
+                        <mtd>
+                           <mn>3</mn>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>3</mot>
+         <ponctuation>)</ponctuation>
+         <mot>Préciser</mot>
+         <mot>les</mot>
+         <mot>inverses</mot>
+         <mot>des</mot>
+         <mot>matrices</mot>
+         <mot>suivantes</mot>
+         <ponctuation>:</ponctuation>
+      </lit>
+   </titre>
+    <phrase>
+      <lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>A</mi>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>2</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>3</mn>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mn>5</mn>
+                           </mrow>
+                        </mtd>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mn>2</mn>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mi>B</mi>
+               <mo stretchy="false">=</mo>
+               <mfenced close=")" open="(">
+                  <mtable>
+                     <mtr>
+                        <mtd>
+                           <mn>1</mn>
+                        </mtd>
+                        <mtd>
+                           <mfrac>
+                              <mn>2</mn>
+                              <mn>5</mn>
+                           </mfrac>
+                        </mtd>
+                        <mtd>
+                           <mfrac>
+                              <mn>17</mn>
+                              <mn>10</mn>
+                           </mfrac>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mfrac>
+                                 <mn>1</mn>
+                                 <mn>5</mn>
+                              </mfrac>
+                           </mrow>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mfrac>
+                                 <mn>1</mn>
+                                 <mn>10</mn>
+                              </mfrac>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                     <mtr>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mn>0</mn>
+                        </mtd>
+                        <mtd>
+                           <mrow>
+                              <mo stretchy="false">−</mo>
+                              <mfrac>
+                                 <mn>1</mn>
+                                 <mn>2</mn>
+                              </mfrac>
+                           </mrow>
+                        </mtd>
+                     </mtr>
+                  </mtable>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <titre niveauOrig="2">
+      <lit>
+         <mot>4</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mmultiscripts>
+                  <mrow>
+                     <mo stretchy="false">(</mo>
+                     <mrow>
+                        <mi>A</mi>
+                        <mo stretchy="false">×</mo>
+                        <mi>B</mi>
+                     </mrow>
+                     <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mprescripts/>
+                  <none/>
+                  <mi>t</mi>
+               </mmultiscripts>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mmultiscripts>
+                     <mi>B</mi>
+                     <mprescripts/>
+                     <none/>
+                     <mi>t</mi>
+                  </mmultiscripts>
+                  <mo stretchy="false">×</mo>
+                  <mmultiscripts>
+                     <mi>A</mi>
+                     <mprescripts/>
+                     <none/>
+                     <mi>t</mi>
+                  </mmultiscripts>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </titre>
+    <phrase/>
+    <titre niveauOrig="1">
+      <lit>
+         <mot>V</mot>
+         <ponctuation>.</ponctuation>
+         <mot>Géométrie</mot>
+      </lit>
+   </titre>
+    <phrase>
+      <lit>
+         <mot>1</mot>
+         <ponctuation>)</ponctuation></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mover accent="true">
+                  <mi>u</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <mfrac>
+                        <mn>3</mn>
+                        <mrow>
+                           <mn>4</mn>
+                           <mo stretchy="false">+</mo>
+                           <mn>3</mn>
+                        </mrow>
+                     </mfrac>
+                     <mi>;</mi>
+                     <mfrac>
+                        <mn>6</mn>
+                        <mn>7</mn>
+                     </mfrac>
+                     <mi>;</mi>
+                     <mfrac>
+                        <mn>2</mn>
+                        <mn>7</mn>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mover accent="true">
+                  <mi>v</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <mfrac>
+                        <mn>6</mn>
+                        <mn>7</mn>
+                     </mfrac>
+                     <mrow>
+                        <mi>;</mi>
+                        <mo stretchy="false">−</mo>
+                        <mfrac>
+                           <mn>2</mn>
+                           <mn>7</mn>
+                        </mfrac>
+                     </mrow>
+                     <mrow>
+                        <mi>;</mi>
+                        <mo stretchy="false">−</mo>
+                        <mfrac>
+                           <mn>3</mn>
+                           <mn>7</mn>
+                        </mfrac>
+                     </mrow>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mover accent="true">
+                  <mi>w</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+               <mfenced close=")" open="(">
+                  <mrow>
+                     <mfrac>
+                        <mn>2</mn>
+                        <mn>7</mn>
+                     </mfrac>
+                     <mrow>
+                        <mi>;</mi>
+                        <mo stretchy="false">−</mo>
+                        <mfrac>
+                           <mn>3</mn>
+                           <mn>7</mn>
+                        </mfrac>
+                     </mrow>
+                     <mi>;</mi>
+                     <mfrac>
+                        <mn>6</mn>
+                        <mn>7</mn>
+                     </mfrac>
+                  </mrow>
+               </mfenced>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+    <phrase/>
+    <phrase>
+      <lit>
+         <mot>Calculer</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mover accent="true">
+                  <mi>u</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+               <mo stretchy="false">⋅</mo>
+               <mover accent="true">
+                  <mi>v</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+            </mrow>
+         </math><lit><mot>et</mot></lit><math xmlns="http://www.w3.org/1998/Math/MathML" overflow="scroll">
+            <mrow>
+               <mover accent="true">
+                  <mi>z</mi>
+                  <mo stretchy="false">→</mo>
+               </mover>
+               <mo stretchy="false">=</mo>
+               <mrow>
+                  <mover accent="true">
+                     <mi>v</mi>
+                     <mo stretchy="false">→</mo>
+                  </mover>
+                  <mo stretchy="false">∧</mo>
+                  <mover accent="true">
+                     <mi>w</mi>
+                     <mo stretchy="false">→</mo>
+                  </mover>
+               </mrow>
+            </mrow>
+         </math><lit></lit>
+   </phrase>
+  
+</doc:doc>

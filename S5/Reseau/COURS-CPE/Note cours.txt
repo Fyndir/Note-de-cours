@@ -1,0 +1,9 @@
+Cours 1 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 3)
+Cours 2 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 4) 
+Cours 3 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 5)
+Cours 4 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 2)
+Cours 5 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 6)
+Cours 6 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 7,8)
+Cours 7 : 3IRC-Intro Réseaux-CCNA-RS (chapitre 8)
+Cours 8 : 3IRC-Intro Partie VLAN (chapitre 6)
+

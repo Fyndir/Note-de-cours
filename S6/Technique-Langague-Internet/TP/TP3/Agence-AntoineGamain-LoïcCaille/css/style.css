@@ -1,0 +1,392 @@
+h1 {
+    margin-top: -30px;
+    padding-top: 22px;
+    background: #350F03;
+    color: #E0B00E;
+    text-align: center;
+    border: 17px solid #350F03;
+    width: 100%;
+    margin-left: -8px;
+    margin-bottom: -20px;
+    font-size: 60px;
+    padding-bottom: 25px;
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    border-bottom: 2px solid white;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+menu {
+    margin-top: 0;
+    background: #7C2208;
+    text-align: center;
+    border-left: 10px solid #7C2208;
+    border-right: 10px solid #7C2208;
+    border-bottom: 4px solid #350F03;
+    width: 100%;
+    margin-left: -8px;
+    transform: translate(0, 0);
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    display: block;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+nav a:hover {
+    color: #E0B00E;
+    background-color: #350F03;
+}	
+
+footer {
+    margin-top: 70px;
+    background: #350F03;
+    color: #E0B00E;
+    text-align: center;
+    width: 100%;
+    margin-left: -8px;
+    border: 17px solid #350F03;
+    border-top: 3px solid #350F03;
+    border-bottom: 1px solid #350F03;
+    -webkit-transform: rotate(-0.5deg);
+    -ms-transform: rotate(-0.5deg);
+    transform: rotate(-0.5deg);
+}
+
+body { 
+    background : #cb410b;
+}
+
+#destinations, #paniers {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+article {
+    width: 27%;
+    display: inline-block;
+    border: 2px solid #350F03;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 10px;
+    background: white;
+    color: black;
+    -webkit-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+article:hover {
+    width: 29%;
+    background: #C23B22;
+    color: #E0B00E;
+    text-shadow: 0 0 6px black;
+}
+
+article h3 {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+article img {
+    width: 100%;
+    border-radius: 30%;
+}
+
+.panier img {
+    margin-top: -20px;
+}
+
+article:hover img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+
+article:hover h3 {
+    font-weight: 900;
+}
+
+article:hover .removeReservation {
+    color: #E0B00E;
+}
+
+article .removeReservation {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    bottom: 28px;
+    text-align: right;
+    padding-left: 85%;
+    padding-right: 5%;
+}
+
+article:hover .removeReservation:hover {
+    color: red;
+}
+
+.destination a, .panier a {
+    text-decoration: none;
+}
+
+.destination .infos, .panier .infos{
+    display: inline-block;
+    width: 30%;
+}
+
+.destination .infos2, .panier .infos2{
+    display: inline-block;
+    width: 44%;
+}
+
+.destination .dates, .panier .dates{
+    display: inline-block;
+    width: 95%;
+    font-size: 10px;
+}
+
+a:nth-child(2) article, a:nth-child(5) article, a:nth-child(7) article, article:nth-child(2), article:nth-child(5), article:nth-child(7) {
+    -webkit-transform: rotate(-1deg) !important;
+    -ms-transform: rotate(-1deg) !important;
+    transform: rotate(-1deg) !important;
+}
+
+.text, #filtres, #panierVide {
+    color: white;
+    margin: auto;
+    font-size: 20px;
+    text-shadow: 0 0 6px black;
+    width: 60%;
+}
+
+#filtres {
+    margin-top: -30px !important;
+}
+
+.prix {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+#renseignement, #loginForm {
+    width: 60%;
+    margin: auto;
+    color: white;
+    font-size: 20px;
+    text-shadow: 0 0 6px black;
+}
+
+.formStar {
+    color: #E0B00E;
+}
+
+form input {
+    border-radius: 4px;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    width: 100%;
+}
+
+form input:hover {
+    background: #e3e3e3;
+}
+
+form textarea {
+    border-radius: 4px;
+    width: 100%;
+}
+
+form textarea:hover {
+    background: #e3e3e3;
+}
+
+form button {
+    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #7C2208;
+}
+
+form button:hover {
+    background-color: #350F03;
+    color: #E0B00E;
+}
+
+.petitDej input {
+    width: 20px;
+}
+
+#buttonForm, #buttonContact {
+    text-align: center;
+}
+
+#image {
+    width: 80%;
+    border-radius: 3px;
+    border: 1px solid white;
+    -webkit-transform: rotate(1deg);
+    -ms-transform: rotate(1deg);
+    transform: rotate(1deg);
+}
+
+#res {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#filtres {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+.filtreRadio {
+    width: 44%;
+    display: inline-block;
+}
+
+.filtreradio{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background-color: #350F03;
+    color: #e0b00e;
+    top: 10px;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;     
+    margin-right: 7px;
+    outline: none;
+}
+
+.filtreradio:checked::before{
+    position: absolute;
+    font: 13px/1 'Open Sans', sans-serif;
+    left: 11px;
+    top: 7px;
+    content: '\02143';
+    transform: rotate(40deg);
+}
+
+.filtreradio:hover{
+    background-color: rgba(53, 15, 3, 0.82);
+}
+
+.filtreradio:checked{
+    background-color: #7C2208;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 15px;
+    background: #7C2208;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #e0b00e;
+    cursor: pointer;
+    border-radius: 35%;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #e0b00e;
+    cursor: pointer;
+}
+
+.line {
+    -webkit-transform: rotate(-1deg);
+    -ms-transform: rotate(-1deg);
+    transform: rotate(-1deg);
+    border-bottom: 2px solid white;
+    width: 60%;
+    margin: auto;
+}
+
+.filtresDates, .filtresPays {
+    width: 45%;
+    display: inline-block;
+}
+
+#user {
+    border: 2px solid white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    width: 250px;
+    margin-left: auto;
+    text-align: center;
+    font-size: 20px;
+    color: #E0B00E;
+    text-shadow: 0 0 2px black;
+    z-index: 100;
+    background-color: rgba(203, 65, 11, 0.78);
+    visibility: hidden;
+}
+
+#user p {
+    margin: 0;
+}
+
+#user a {
+    text-decoration: none;
+    color: #E0B00E;
+}
+
+#user a:hover {
+    color: white;
+}

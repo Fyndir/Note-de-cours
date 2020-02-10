@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8" />
+	<meta name="keywords" content="xhtml, html5, form" />
+	<meta name="author" content="Bruno Mascret et al." />
+	<title>Formulaire HTML5</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<!--
+	Repris et adapté par Bruno Mascret de http://dmouronval.developpez.com/tutoriels/html/formulaires-html5/
+ * Les trois auteurs et traducteur
+ * 
+ * Jan Kleinert * 
+ * Traducteur : Didier Mouronval
+ * Bovino
+ * 
+ * Licence creative commons By
+ * http://creativecommons.org/licenses/by/3.0/deed.fr
+	-->
+	<script type='text/javascript' src='scripts/script.js'></script>
+</head>
+<body>
+	<h1>Un exemple de formulaire html5</h1>
+	<form oninput="getTotal(this)" method="post" action="lib/main.php?variable=truc" id="formulaire">
+		<ul>
+			<li>
+				<label for="full_name">Nom complet&nbsp;:</label>
+				<input type="text" id="full_name" name="full_name" placeholder="Jane Doe" required>
+			</li>
+			<li>
+				<label for="email_addr">Adresse e-mail&nbsp;:</label>
+				<input type="email" id="email_addr" name="email_addr" required>
+			</li>
+			<li>
+				<label for="email_addr_repeat">Confirmez l'adresse e-mail&nbsp;:</label>
+				<input type="email" id="email_addr_repeat" name="email_addr_repeat" required 
+					oninput="check(this)">
+			</li>
+			<li>
+				<label for="arrival_dt">Date d'arrivée&nbsp;:</label>
+				<input type="date" id="arrival_dt" name="arrival_dt" required>
+			</li>
+			<li>
+				<label for="departure_dt">Date de départ&nbsp;:</label>
+				<input type="date" id="departure_dt" name="departure_dt" required>
+			</li>
+			<li>
+				<label for="nights">Nombre de nuitées (15 € par nuit)&nbsp;:</label>
+				<input type="number" id="nights" name="nights" value="1" min="1" max="30" required>
+			</li>
+			<li>
+				<label for="guests">Nombre d'invités (10 € par invité supplémentaire)&nbsp;:</label>
+				<input type="number" id="guests" name="guests" value="1" min="1" max="4" required>
+			</li>
+			<li>
+				<label for="total">Total&nbsp;:</label>
+				<output id="total" name="total">99</output>.00 €
+			</li>
+			<li>
+				<label for="promo">Code de promotion&nbsp;:</label>
+				<input type="text" id="promo" name="promo" pattern="[A-Za-z0-9]{6}" 
+					title="Le code de promotion contient six caractères alphanumériques.">
+			</li>
+			<li>
+				<input type="submit" value="Effectuer la réservation" /> 
+			</li>
+		</ul>
+	</form>
+	<footer>
+		<p>Repris et adapté par Bruno Mascret de <a href="http://dmouronval.developpez.com/tutoriels/html/formulaires-html5/">developpez.com</a>.</p>
+		<p>Les trois auteurs et traducteur originaux sont:</p>
+		<ul>
+			<li>Jan Kleinert</li>
+			<li>Traducteur&nbsp;: Didier Mouronval</li>
+			<li>Bovino</li>
+		</ul>
+		Licence creative commons By <a href="http://creativecommons.org/licenses/by/3.0/deed.fr">http://creativecommons.org/licenses/by/3.0/deed.fr</a>
+	</footer>
+	
+</body>
+</html>

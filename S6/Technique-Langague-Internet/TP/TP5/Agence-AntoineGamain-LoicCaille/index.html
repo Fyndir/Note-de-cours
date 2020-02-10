@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Le Grand Tour - Accueil</title>
+        <meta name="description" content="Agence de voyage">
+        <link rel="stylesheet" href="css/style.css">
+        <script type="text/javascript" src="js/script.js"></script>   
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    </head>
+
+    <body onload="InitOnload()">
+
+        <header>
+
+            <h1>
+                Le Grand Tour
+            </h1>
+            <menu>
+                <nav>
+                    <a href="index.html">Accueil</a>
+                    <a href="apropos.html">A propos & Contact</a>
+                    <a href="login.html" id="logNav">Se connecter</a>
+                </nav>
+            </menu>
+
+        </header>
+        
+        <aside id="user">
+            <p id="userName">Name</p>
+            <a href="panier.html"><i class="fas fa-shopping-cart"></i><span style="display: none">Panier</span></a>
+        </aside>
+
+        <h2> Accueil </h2>
+        
+        <div id="filtres">           
+            <div class="filtreRadio">
+                <h3>Petit-déjeuner</h3>
+                <label for="dej1">Peut-importe
+                <input class="filtreradio" type="radio" id="dej1" name="dej" value="osef" checked></label>
+                <label for="dej2">Oui
+                <input class="filtreradio" type="radio" id="dej2" name="dej" value="oui"></label>
+                <label for="dej3">Non
+                <input class="filtreradio" type="radio" id="dej3" name="dej" value="non"></label>
+            </div>         
+            <div class="filtreRadio">
+                <h3>Enfants</h3>
+                <label for="enfants1">Peut-importe
+                <input class="filtreradio" type="radio" id="enfants1" name="enfants" value="osef" checked></label>
+                <label for="enfants2">Oui
+                <input class="filtreradio" type="radio" id="enfants2" name="enfants" value="oui"></label>
+                <label for="enfants3">Non
+                <input class="filtreradio" type="radio" id="enfants3" name="enfants" value="non"></label>
+            </div>
+            <div class="filtresPrix">
+                <h3>Prix</h3>
+                <label for="prices1">Max
+                <input class="filtreradio" type="radio" id="prices1" name="prices" value="max" checked></label>
+                <label for="prices2">Min
+                <input class="filtreradio" type="radio" id="prices2" name="prices" value="min"></label>
+                <br/><br/>
+                <label for="priceRange">
+                    <input name="priceRange" type="range" min="20" max="2000" value="1500" class="slider" id="priceRange">
+                    <small id="priceTxt"><span id="priceDisplay">1200</span>€</small>
+                </label>
+            </div>
+            <div class="filtresDates">
+                <h3>Dates</h3>
+                <label for="depart"> Départ
+                <input type="date" name="depart" id="depart"></label>
+                <label for="retour"> Retour
+                <input type="date" name="retour" id="retour"></label>
+            </div>
+            <div class="filtresPays">
+                    <h3>Pays</h3>
+                <label for="pays"><span style="display: none;">Pays</span>
+                    <select name="pays" id="pays">
+                        <option value="0">Tous</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        
+        <br/><br/>
+
+        <div class="line"></div>
+        
+        <br/>
+        
+        <div class="text">
+            <p>Choisissez parmi une de ces destinations de rêve !</p>
+        </div>
+
+        <div id="destinations"></div>
+
+        <footer>
+            <p>Site réalisé par Antoine Gamain & Loïc Caille</p>
+        </footer>
+
+    </body>
+
+</html>

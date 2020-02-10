@@ -1,0 +1,33 @@
+clc
+clear all
+close all
+hold on;
+grid on
+
+P1=[1/2 0];
+P2=[0 1/4];
+P3=[0 3/4];
+P4=[1/2 1];
+P5=[3/4 /4];
+P6=[3/4 5/8];
+P7=[1/2 1/2];
+P8=[3/8 9/16];
+P9=[3/8 11/16];
+P10=[1/2 3/4];
+P11=[5/8 23/32];
+P12=[5/8 21/32];
+P13=[1/2 5/8];
+
+n=100;
+t=linspace(0,1,n)';
+
+
+[xc yc]=xy(P1,P2,P3,P4);
+plot(xc,yc,'or');
+M = PlotBezier(P1,P2,P3,P4,t);
+plot(M(:,1),M(:,2));
+
+[xc yc]=xy(P4,P5,P6,P7);
+plot(xc,yc,'or');
+M = PlotBezier(P4,P5,P6,P7,t);
+plot(M(:,1),M(:,2));

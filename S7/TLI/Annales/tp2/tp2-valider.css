@@ -1,0 +1,27 @@
+h1,h2{
+color:green;
+background-color:green;
+width: 200px;
+}
+
+form{
+width: 300px;	
+}
+
+body{
+	margin-left:200px;
+	margin-right: 20%;
+	
+}
+
+#preamble{
+	width: 400px;
+	clear:both;
+}
+
+#corps{
+float: right;
+width: 600px;
+position:relative;
+}
+

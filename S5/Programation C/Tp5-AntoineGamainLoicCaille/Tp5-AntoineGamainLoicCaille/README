@@ -1,0 +1,17 @@
+*README:
+    *Libraries:
+        *<sys/types.h> 
+        *<sys/socket.h>
+        *<sys/epoll.h>
+        *<netinet/in.h>
+        *<stdio.h>
+        *<stdlib.h>
+        *<string.h>
+        *<unistd.h>
+        *<sys/stat.h>
+        *<dirent.h>
+        *<fcntl.h>
+        *"client.h"
+        *"serveur.h"
+    *Difficulties:
+        *Addapter la fonction de parcours de dossier pour faire les élèves
