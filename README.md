@@ -33,3 +33,4 @@
 ## S8 :
 
 * Devops
+* data maining
