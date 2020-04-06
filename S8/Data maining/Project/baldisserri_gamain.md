@@ -32,17 +32,33 @@ Nous avons décidé d'utiliser un set d'image trouvé sur kaggle représentant l
 
 ## Collecte
 
-L'algorithme de cette partie fonctionne avec l'algorithme ci dessous : 
+L'algorithme de cette partie fonctionne comme expliqué dans le schéma ci-dessous : 
 
 <img src="https://cdn.discordapp.com/attachments/622447959891640341/696715656338473050/Collect.png">
 
+On peut voir que l'on utilise l'algorithme de mini batch K-means , nous avons choisi cet algo de clustering car, en nous basant sur le tp fait au préalable il était celui qui fournissait les meilleurs résultats comparés aux ressources nécessaires à son fonctionnement. En effet après un test , les résultats que nous avons obtenu avec le K-means étaient similaires mais prenaient beaucoup plus de temps. La projet tournant sur nos machines personnelles , nous avons opté pour l'algo le moins coûteux.
+
+Afin d'éviter les lourdeurs liées a l'extraction des données (extraction à chaque run du programme) ,celles-ci sont stockées au format json. Nous avons choisi ce format car il est le format standard de stockage de données commun à la majorité des langages de programmation . Il est donc extrêmement facile à exploiter et à transmettre. Cela permet également d'avoir les deux parties du programme indépendantes.   
+
 ## Exploitation
 
+L'algorithme de cette partie fonctionne comme expliqué dans le schéma ci-dessous : 
 
+<img src="https://cdn.discordapp.com/attachments/622447959891640341/696718695866826837/Exploit_1.png">
+
+Nous avons choisi de partir sur un classifier de type "Random forest". Nous avons choisi cette méthode car elle était facile à mettre en place. Les données que nous utilisions au départ étaient les 3 couleurs principales de l'image ainsi que les types du pokémon présent dans le fichier csv fourni avec le dataset. Au vu des premiers résultats nous avons choisi d'éliminer la dimension 'types du pokémon' car elle perturbait les suggestions du classifieur.
+
+Au départ , nous avons utilisé l'intégralité de notre set d'image comme jeu d'entraînement ainsi que comme jeu de test. Le but de cette manipulation était de vérifier que les images renseignées dans les préférences de l'utilisateur ressortaint bien dans les suggestions du classificateur. Cette manipulation a été concluante , nous avons donc aprés cette vérification cloisonné le jeu d'entraînement et le jeu de test. Les pokémons préférés de l'utilisateurs provenaint tous du jeu d'entrainement. Les résultats ont gagné en précision.
 
 # Evaluation des resultats
 
+Dans le but de déterminer la qualité de nos résultats , nous avons constitué un dataset de pokémons qui étaient majoritairement bleus.
+Voici les suggestions du classificateur :
 
+<img src="https://media.discordapp.net/attachments/622447959891640341/696741190103597136/Capture_decran_2020-04-06_17-19-17.png?width=641&height=686">
+
+On peut voir que 3 pokémons sur les 6 proposés correspondent à nos critères, cependant le gris et le violet sont des teintes proches du bleu donc leur suggestion n'est pas illogique
 
 # Conclusion
 
+Il reste encore plusieurs piste à creuser , le classificateur n'étant qu'un moyen parmis tant d'autres de suggérer des images. On peut par exemple imaginer l'utilisation de tensorflow ou encore rajouter des paramêtres à notre dataset afin d'améliorer la pertinence des résultats (plus de couleurs , ajout de label , prise en compte de la taille de l'image dans le cas d'un autre dataset). Néanmoins le résultat final que nous obtenons est plutôt encourageant: 4/6 images pertinantes avec 33 images marquées favorites sur 400. Il serait intéressant de refaire l'expérience avec un jeu plus dense et un dataset plus complet qui contiendrait plusieurs images correspondant à un même pokémon.    
