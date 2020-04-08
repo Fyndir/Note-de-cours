@@ -34,3 +34,5 @@
 
 * Devops
 * data maining
+* Secu
+* Android
