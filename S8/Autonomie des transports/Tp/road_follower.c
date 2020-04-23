@@ -10,6 +10,58 @@
 #include <linux/can.h>
 #include <linux/can/raw.h>
 
+/* Attend les données des capteurs du vehicules et retourne deux valeur (droite gauche)*/
+int recupdatacapteur(int s,int poids[]) {
+        struct can_frame frame;
+        // Création du filtre
+        struct can_filter rfilter[1];
+
+        // Définition du masque du filtre du CAN
+        rfilter[0].can_id   = 0xC00;
+        rfilter[0].can_mask = 0xFF8;
+
+        setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
+
+        u_int8_t can_id;
+        u_int8_t init_done = 0x00;        
+
+        while (init_done != 0xff) {
+                if (read(s, &frame, sizeof(struct can_frame)) < 0) {
+                        perror("Read");
+                        return -1; 
+                }
+                // recupe le nombre apres le "C"
+                can_id = frame.can_id & 0xff;
+                switch (can_id)
+                {
+                    case 00: 
+                        poids[0]+=frame.data[0]*50;
+                        break;
+                    case 01:
+                        poids[0]+=frame.data[0]*10;
+                        break;
+                    case 02:
+                        poids[0]+=frame.data[0];
+                        break;
+                    case 03:
+                        poids[1]+=frame.data[0]*50;
+                        break;
+                    case 04:
+                        poids[1]+=frame.data[0]*10;
+                        break;
+                    case 05:
+                        poids[1]+=frame.data[0];
+                        break;
+                    
+                }
+                   
+                // on up les bit un par un , quand ils sont tous up les données sont toute reçu
+                init_done = init_done + (1 << can_id);
+        }
+        return 0;
+        
+}
+
 /*  permet de clear le terminal*/
 void clear_term() {
         printf("\033[H\033[J");
@@ -20,6 +72,18 @@ void set_cursor_pos(int x, int y) {
         printf("\x1b[%d;%dH", y, x); 
 }
 
+int send_frame(int s, int adresse , int nboctet , char* data)
+{
+    struct can_frame frame; // ma frame   
+    frame.can_id = adresse;
+	frame.can_dlc = nboctet;	
+    memcpy(frame.data,data,sizeof(char)*frame.can_dlc) ; 
+    if(write(s, &frame, sizeof(struct can_frame)) != sizeof(struct can_frame)) {
+        perror("Write");
+        return 1;
+    }
+    else return 0;
+}
 
 int main(int argc, char **argv)
 {
@@ -57,6 +121,10 @@ int main(int argc, char **argv)
 
     int rpm =0;
     int vitesse =0;
+    int direction = 0x00;
+    int acceleration = 0x64;
+    int frein = 0x00;
+    char tampon[3];
     /* Lecture des trames dans une boucle infini */
     while(1)
     {
@@ -66,20 +134,59 @@ int main(int argc, char **argv)
             perror("Erreur de lecture");
             return 1;
         }        
-
-        /* On affiche les bonnes infos en fontions de la tram */
+        
+        /* On regule la vitesse */
         switch(frame.can_id & 0xFFF /* Pour enlever les 0 inutile */){        
             /* Tram de vitesse en km/h */
             case 0xC07:
-                vitesse = frame.data[0]   
+                vitesse = frame.data[0];
 
+                /* On accelere */
                 if (vitesse < 50)
-                    printf("accelerer \n");
-                else
-                    printf("ralentir \n");  
+                {
+                    frein=0x00;
+                    acceleration=0x64;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }   
+                /* On ralenti */            
+                else if(vitesse == 50)
+                {
+                    acceleration=0x00;
+                    frein=0x00;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }
+                /* On ralenti */
+                else 
+                {
+                    frein=0x15;
+                    acceleration=0x00;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }                    
                 break;  
+            case 0x321:
+            /* on recupere la direction pour ne pas la modifier quand on change la vitesse */
+                direction = frame.data[2];
+                acceleration = frame.data[0];
+                frein = frame.data[1];            
         }
-        printf("\r\n");
+
+        /* On regule la direction */
+        int poids[2]={0,0};
+        if(recupdatacapteur(s,poids) != 0)
+        {
+           perror("Socket");
+		    return 1; 
+        };
+
+        int poidtotal = poids[0]+poids[1];        
+        int diff = poids[0] - poids[1];
+        double ratio = (double) diff / poidtotal;
+        int steering = (int) ((ratio / 2) * 0x64);       
+        sprintf(tampon,"%c%c%c",acceleration,frein,steering);
+        send_frame(s,0x321,3,tampon); 
     }
 
 	return 0;
