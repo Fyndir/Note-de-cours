@@ -148,7 +148,7 @@ A l'aide du programme si dessus il est facile de les rejouer et de déduire leur
 
 Toute les valeurs inconnues eteignent tout
 
-# TP2
+# TP2a
 
 ## Features available on CAN-Bus
 
@@ -312,6 +312,7 @@ int main(int argc, char **argv)
 
 ## Dashboard
 
+Je pense que je n'aurais pas du utiliser le 0x321 mais j'ai dev une solution alternative est dans le code du raod_follower   
  ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -613,3 +614,325 @@ int main(int argc, char **argv)
 }
 
  ```
+
+ # TP 2b
+
+ ## explain what is MISRA 
+
+MISRA C est une norme de programmation en langage C. Elle spécifie les règles de programmation , l'objectif est d’éviter des erreurs d’exécution en homogenéisant la structure du code entre tout les developpeurs.
+
+## Track des erreurs de conformités
+
+```
+Checking road_follower.c ...
+road_follower.c:149:29: error: Buffer is accessed out of bounds: tampon [bufferAccessOutOfBounds]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                            ^
+road_follower.c:157:29: error: Buffer is accessed out of bounds: tampon [bufferAccessOutOfBounds]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                            ^
+road_follower.c:165:29: error: Buffer is accessed out of bounds: tampon [bufferAccessOutOfBounds]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                            ^
+road_follower.c:188:17: error: Buffer is accessed out of bounds: tampon [bufferAccessOutOfBounds]
+        sprintf(tampon,"%c%c%c",acceleration,frein,steering);
+                ^
+road_follower.c:88:5: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-2.7]
+int main(int argc, char **argv)
+    ^
+road_follower.c:67:16: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-4.1]
+        printf("\033[H\033[J");
+               ^
+road_follower.c:72:16: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-4.1]
+        printf("\x1b[%d;%dH", y, x);
+               ^
+road_follower.c:37:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 00:
+                         ^
+road_follower.c:40:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 01:
+                         ^
+road_follower.c:43:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 02:
+                         ^
+road_follower.c:46:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 03:
+                         ^
+road_follower.c:49:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 04:
+                         ^
+road_follower.c:52:26: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-7.1]
+                    case 05:
+                         ^
+road_follower.c:59:44: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.1]
+                init_done = init_done + (1 << can_id);
+                                           ^
+road_follower.c:187:38: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-10.4]
+        int steering = (int) ((ratio / 2) * 0x64);
+                                     ^
+road_follower.c:101:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-13.4]
+ if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
+        ^
+road_follower.c:31:25: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+                        return -1;
+                        ^
+road_follower.c:83:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+        return 1;
+        ^
+road_follower.c:85:10: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+    else return 0;
+         ^
+road_follower.c:103:3: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+  return 1;
+  ^
+road_follower.c:119:3: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+  return 1;
+  ^
+road_follower.c:135:13: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+            return 1;
+            ^
+road_follower.c:181:7: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-15.5]
+      return 1;
+      ^
+road_follower.c:174:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-16.3]
+        }
+        ^
+road_follower.c:35:17: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-16.4]
+                switch (can_id)
+                ^
+road_follower.c:139:9: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-16.4]
+        switch(frame.can_id & 0xFFF /* Pour enlever les 0 inutile */){
+        ^
+road_follower.c:98:8: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+ printf("CAN Sockets Demo\r\n");
+       ^
+road_follower.c:107:8: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+ strcpy(ifr.ifr_name, "vcan0" );
+       ^
+road_follower.c:111:8: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+ memset(&addr, 0, sizeof(addr));
+       ^
+road_follower.c:149:28: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                           ^
+road_follower.c:150:31: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    send_frame(s,0x321,3,tampon);
+                              ^
+road_follower.c:157:28: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                           ^
+road_follower.c:158:31: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    send_frame(s,0x321,3,tampon);
+                              ^
+road_follower.c:165:28: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction);
+                           ^
+road_follower.c:166:31: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+                    send_frame(s,0x321,3,tampon);
+                              ^
+road_follower.c:188:16: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+        sprintf(tampon,"%c%c%c",acceleration,frein,steering);
+               ^
+road_follower.c:189:19: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-17.7]
+        send_frame(s,0x321,3,tampon);
+                  ^
+road_follower.c:1:0: style: misra violation (use --rule-texts=<file> to get proper output) [misra-c2012-21.6]
+#include <stdio.h>
+^
+
+```
+
+## Code plus conforme à misra
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#include <net/if.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+
+#include <linux/can.h>
+#include <linux/can/raw.h>
+
+/* Attend les données des capteurs du vehicules et retourne deux valeur (droite gauche)*/
+int recupdatacapteur(int s,int poids[]) {
+        struct can_frame frame;
+        // Création du filtre
+        struct can_filter rfilter[1];
+
+        // Définition du masque du filtre du CAN
+        rfilter[0].can_id   = 0xC00;
+        rfilter[0].can_mask = 0xFF8;
+
+        setsockopt(s, SOL_CAN_RAW, CAN_RAW_FILTER, &rfilter, sizeof(rfilter));
+
+        u_int8_t can_id;
+        u_int8_t init_done = 0x00;        
+
+        while (init_done != 0xff) {
+                if (read(s, &frame, sizeof(struct can_frame)) < 0) {
+                        perror("Read");
+                        return -1; 
+                }
+                // recupe le nombre apres le "C"
+                can_id = frame.can_id & 0xff;
+                switch (can_id)
+                {
+                    case 0x00: 
+                        poids[0]+=frame.data[0]*50;
+                        break;
+                    case 0x01:
+                        poids[0]+=frame.data[0]*10;
+                        break;
+                    case 0x02:
+                        poids[0]+=frame.data[0];
+                        break;
+                    case 0x03:
+                        poids[1]+=frame.data[0]*50;
+                        break;
+                    case 0x04:
+                        poids[1]+=frame.data[0]*10;
+                        break;
+                    case 0x05:
+                        poids[1]+=frame.data[0];
+                        break;
+                    default:
+                        break;                    
+                }
+                   
+                // on up les bit un par un , quand ils sont tous up les données sont toute reçu
+                init_done = init_done + ((int)1 << can_id);
+        }
+        return 0;
+        
+}
+
+int send_frame(int s, int adresse , int nboctet , char* data)
+{
+    struct can_frame frame; // ma frame   
+    frame.can_id = adresse;
+	frame.can_dlc = nboctet;	
+    memcpy(frame.data,data,sizeof(char)*frame.can_dlc) ; 
+    if(write(s, &frame, sizeof(struct can_frame)) != sizeof(struct can_frame)) {
+        perror("Write");
+        return 1;
+    }
+    else return 0;
+}
+
+int main(void)
+{
+	int s; // mon socket
+	struct sockaddr_can addr; // adresse du socket
+	struct ifreq ifr; // identifiant de la frame
+	struct can_frame frame; // ma frame
+	int i =10; // Nb envoi de la trame
+
+	int nbytes; // Nb bytes dans la tram pour la lecture
+
+    /* Ouverture de la socket */
+    s = socket(PF_CAN, SOCK_RAW, CAN_RAW);
+	if ( s < 0) {
+		perror("Socket");
+		return 1;
+	}
+
+    /* definition de l'interface de destination */
+	strcpy(ifr.ifr_name, "vcan0" );
+	ioctl(s, SIOCGIFINDEX, &ifr);
+
+    /* clean l'espace memoire  */
+	memset(&addr, 0, sizeof(addr));
+	/* Parametrage de l'adresse */    
+    addr.can_family = AF_CAN;
+	addr.can_ifindex = ifr.ifr_ifindex;
+
+    /* Bind du socket */
+	if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+		perror("Bind");
+		return 1;
+	}  
+
+    int rpm =0;
+    int vitesse =0;
+    int direction = 0x00;
+    int acceleration = 0x64;
+    int frein = 0x00;
+    char tampon[4];
+    /* Lecture des trames dans une boucle infini */
+    while(1)
+    {
+        /* On attrape la tram */         	
+        nbytes = read(s, &frame, sizeof(struct can_frame));
+        if (nbytes < 0) {
+            perror("Erreur de lecture");
+            return 1;
+        }        
+        
+        /* On regule la vitesse */
+        switch(frame.can_id & 0xFFF /* Pour enlever les 0 inutile */){        
+            /* Tram de vitesse en km/h */
+            case 0xC07:
+                vitesse = frame.data[0];
+
+                /* On accelere */
+                if (vitesse < 50)
+                {
+                    frein=0x00;
+                    acceleration=0x64;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }   
+                /* On ralenti */            
+                else if(vitesse == 50)
+                {
+                    acceleration=0x00;
+                    frein=0x00;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }
+                /* On ralenti */
+                else 
+                {
+                    frein=0x15;
+                    acceleration=0x00;
+                    sprintf(tampon,"%c%c%c",acceleration,frein,direction); 
+                    send_frame(s,0x321,3,tampon);
+                }                    
+                break;  
+            case 0x321:
+            /* on recupere la direction pour ne pas la modifier quand on change la vitesse */
+                direction = frame.data[2];
+                acceleration = frame.data[0];
+                frein = frame.data[1];
+                break;
+            default:
+                break;            
+        }
+
+        /* On regule la direction */
+        int poids[2]={0,0};
+        if(recupdatacapteur(s,poids) != 0)
+        {
+           perror("Socket");
+		    return 1; 
+        };
+
+        int poidtotal = poids[0]+poids[1];        
+        int diff = poids[0] - poids[1];
+        double ratio = (double) diff / poidtotal;
+        int steering = (int) ((ratio / (int)2) * 0x64);       
+        sprintf(tampon,"%c%c%c",acceleration,frein,steering);
+        send_frame(s,0x321,3,tampon); 
+    }
+
+	return 0;
+}
+
+```
+
+
+> Attention il reste deux cas que je n'ai pas traiter : 17.7 et 21.6 
