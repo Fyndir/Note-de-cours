@@ -1117,6 +1117,291 @@ int main(void)
 
 	return ret;
 }
+```
 
+
+# TP 3
+
+## Exo 1 
+
+Le code se decoupe en deux programmes : 
+
+studentOBD2.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <net/if.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+#include <linux/can.h>
+#include <linux/can/raw.h>
+#include <errno.h>
+#include <fcntl.h>
+
+void set_non_blocking(int sock) {
+    int opts = fcntl(sock,F_GETFL);
+    if (opts < 0) {
+        perror("fcntl(F_GETFL)");
+        exit(EXIT_FAILURE);
+    }
+    opts = (opts | O_NONBLOCK);
+    if (fcntl(sock,F_SETFL,opts) < 0) {
+        perror("fcntl(F_SETFL)");
+        exit(EXIT_FAILURE);
+    }
+}
+
+void send_frame(int s, int adresse , int nboctet , char* data){   
+    struct can_frame frame; // ma frame   
+    frame.can_id = adresse;
+	frame.can_dlc = nboctet;	
+    memcpy(frame.data,data,sizeof(char)*frame.can_dlc) ; 
+    if(write(s, &frame, sizeof(struct can_frame)) != sizeof(struct can_frame)) {
+        perror("Socket");
+		exit(EXIT_FAILURE);      
+    }      
+}
+
+int init_socket(char* identVcan){
+	int s; // mon socket
+	struct sockaddr_can addr; // adresse du socket
+	struct ifreq ifr; // identifiant de la frame
+
+    /* Ouverture de la socket */
+	if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
+		perror("Socket");
+		exit(EXIT_FAILURE);
+	}
+
+    /* definition de l'interface de destination */
+	strcpy(ifr.ifr_name, identVcan);
+	ioctl(s, SIOCGIFINDEX, &ifr);
+
+    /* clean l'espace memoire  */
+	memset(&addr, 0, sizeof(addr));
+	/* Parametrage de l'adresse */    
+    addr.can_family = AF_CAN;
+	addr.can_ifindex = ifr.ifr_ifindex;
+
+    /* Bind du socket */
+	if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+		perror("Bind");
+		return 1;
+	}
+
+    return s;
+}
+
+int main(int argc, char **argv)
+{
+    int s=init_socket("vcan0");
+    int sOBD2=init_socket("vcan1");
+    set_non_blocking(sOBD2);
+
+    int i =10; // Nb envoi de la trame
+	int nbytes; // Nb bytes dans la tram pour la lecture
+	struct can_frame frame; // ma frame	
+
+    short  rpm;
+    char vitesse;
+    char throttle;
+
+    rpm=0;
+    vitesse=0;
+    throttle=0;
+
+    /* Lecture des trames dans une boucle infini */
+    while(1)
+    {
+        /* On attrape la tram */         	
+        nbytes = read(s, &frame, sizeof(struct can_frame));
+        if (nbytes < 0) {
+            perror("Erreur de lecture");
+            return 1;
+        }        
+
+        /* On affiche les bonnes infos en fontions de la tram */
+        switch(frame.can_id & 0xFFF /* Pour enlever les 0 inutile */){
+            /* Tram de vitesse  rpm */
+            case 0xC06:               
+                rpm=((u_int16_t*) frame.data)[0];
+                break; 
+            /* Tram de vitesse en km/h */
+            case 0xC07:                
+                vitesse=frame.data[0];
+                break;
+            /* tram de throttle */ 
+            case 0x321: 
+                throttle=frame.data[0];                             
+                break; 
+        }
+
+        /* tcheck vcan1 et repond si jamais */
+        nbytes = read(sOBD2, &frame, sizeof(struct can_frame));
+        if (nbytes < 0 && errno != EAGAIN) {
+            perror("Erreur de lecture");
+            return 1;
+        } 
+        /* On affiche les bonnes infos en fontions de la tram */
+        if (frame.can_id == 0x7DF)
+        {
+            int totalRpm;            
+            char a;
+            char b;
+
+            switch(frame.data[2]){
+                case 0x0C:
+                    // engine rpm
+                    totalRpm = rpm*4; 
+                    a = (char)totalRpm/256;
+                    b = (char)totalRpm%256;                   
+                    sprintf(frame.data, "\x04\xd1\x0c%c%c\xaa\xaa\xaa",a,b );
+                    send_frame(sOBD2,0x7E8,8, frame.data);
+                    break;
+                case 0x0D:
+                    // vehicule speed
+                    sprintf(frame.data, "\x03\xd1\x0d%c\xaa\xaa\xaa\xaa",vitesse );
+                    send_frame(sOBD2,0x7E8,8, frame.data);
+                    break;
+                case 0x11:
+                    // throttle
+                    sprintf(frame.data, "\x03\xd1\x11%c\xaa\xaa\xaa\xaa", (char)throttle*2.55);
+                    send_frame(sOBD2,0x7E8,8, frame.data);
+                    break;             
+            }
+        }
+    }
+	return 0;
+}
 
 ```
+
+UserOBD2Terminal.c
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+#include <net/if.h>
+#include <sys/ioctl.h>
+#include <sys/socket.h>
+
+#include <linux/can.h>
+#include <linux/can/raw.h>
+
+
+void send_frame(int s, int adresse , int nboctet , char* data){   
+    struct can_frame frame; // ma frame   
+    frame.can_id = adresse;
+	frame.can_dlc = nboctet;	
+    memcpy(frame.data,data,sizeof(char)*frame.can_dlc) ; 
+    if(write(s, &frame, sizeof(struct can_frame)) != sizeof(struct can_frame)) {
+        perror("Socket");
+		exit(EXIT_FAILURE);      
+    }      
+}
+/*  permet de clear le terminal*/
+void clear_term() {
+        printf("\033[H\033[J");
+}
+
+int main(int argc, char **argv)
+{
+	int s; // mon socket
+	struct sockaddr_can addr; // adresse du socket
+	struct ifreq ifr; // identifiant de la frame
+	struct can_frame frame; // ma frame
+	int i =10; // Nb envoi de la trame
+
+	int nbytes; // Nb bytes dans la tram pour la lecture
+
+	printf("CAN Sockets Demo\r\n");
+
+    /* Ouverture de la socket */
+	if ((s = socket(PF_CAN, SOCK_RAW, CAN_RAW)) < 0) {
+		perror("Socket");
+		return 1;
+	}
+
+    /* definition de l'interface de destination */
+	strcpy(ifr.ifr_name, "vcan1" );
+	ioctl(s, SIOCGIFINDEX, &ifr);
+
+    /* clean l'espace memoire  */
+	memset(&addr, 0, sizeof(addr));
+	/* Parametrage de l'adresse */    
+    addr.can_family = AF_CAN;
+	addr.can_ifindex = ifr.ifr_ifindex;
+
+    /* Bind du socket */
+	if (bind(s, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
+		perror("Bind");
+		return 1;
+	}
+
+    // /* Clear le terminal pour avoir un jolie affichage */ 
+    clear_term();
+   
+    /* Lecture des trames dans une boucle infini */
+    while(1)
+    {
+        clear_term();      
+
+        sprintf(frame.data, "\x03\xd1\x0d\xaa\xaa\xaa\xaa\xaa");
+        send_frame(s,0x7DF,8, frame.data);
+        /* On attrape la tram */         	
+        nbytes = read(s, &frame, sizeof(struct can_frame));
+        if (nbytes < 0) {
+            perror("Erreur de lecture");
+            return 1;
+        }
+        // interprete frame speed  
+        int speed = frame.data[3];
+        printf("speed: %d km/h\n", speed);        
+        printf("\r\n");
+
+
+        sprintf(frame.data, "\x03\xd1\x11\xaa\xaa\xaa\xaa\xaa");
+        send_frame(s,0x7DF,8, frame.data);
+        /* On attrape la tram */         	
+        nbytes = read(s, &frame, sizeof(struct can_frame));
+        if (nbytes < 0) {
+            perror("Erreur de lecture");
+            return 1;
+        }
+        // interprete frame throttle  
+        int Throttle = (int)(((int)frame.data[3])/2.55);
+        printf("Throttle: %d \n", Throttle);        
+        printf("\r\n");
+
+
+
+        sprintf(frame.data, "\x04\xd1\x0c\xaa\xaa\xaa\xaa\xaa");
+        send_frame(s,0x7DF,8, frame.data);
+        /* On attrape la tram */         	
+        nbytes = read(s, &frame, sizeof(struct can_frame));
+        if (nbytes < 0) {
+            perror("Erreur de lecture");
+            return 1;
+        }        
+        // interprete frame rpm  
+        char a = frame.data[3];
+        char b= frame.data[4];
+        double rpm = (double)(((256*a)+b)/4.0);
+        printf("Motor speed: %d rpm\n", a,b,rpm);        
+        printf("\r\n");
+    }
+
+	return 0;
+}
+
+```
+
+la vitesse se transmet bien cependant les deux autre valeurs ne fonctionnent pas 
+
+## Exo 2
