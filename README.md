@@ -36,3 +36,5 @@
 * data maining
 * Secu
 * Android
+* Design pattern
+* Micro service
