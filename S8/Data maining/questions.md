@@ -142,17 +142,47 @@ Il est facile de détecter les fautes et de lui apprendre à ne pas les refaire.
 
 ## Un site web d’annotation a demandé à 10 utilisateurs de décrire une image en utilisant 5 hashtag (mot-diès). Vous trouverez ci-dessous une table détaillant les choix de hashtags des 10 utilisateurs. La table contient 5 colonnes et 10 lignes. Chaque ligne correspond à un utilisateur. Chaque colonne correspond à un hashtag; les valeurs dans la colonne contiennent soit 0 soit 1. Si la valeur est égale à 0, l’utilisateur n’a pas choisi ce hashtag, sinon la valeur est 1. Votre objectif est de trouver toutes les règles d’association dans cette table. Que pensez-vous de cette image. (1.5 points)
 
-Utilisateur	#Architecture	#Nature	#Paris	#StreetArt	#Fractals
-U1		1		0	0	1		0
-U2		1		1	1	1		1
-U3		1		0	0	1		0
-U4		1		1	1	1		1
-U5		0		1	0	0		1
-U6		0		1	1	1		0
-U7		0		0	0	0		0
-U8		0		0	0	0		0
-U9		0		1	1	1		1
-U10		1		0	0	1		0
+Utilisateur	#Architecture	#Nature	#Paris	#StreetArt	#Fractals  
+U1		1		0	0	1		0  
+U2		1		1	1	1		1  
+U3		1		0	0	1		0  
+U4		1		1	1	1		1  
+U5		0		1	0	0		1  
+U6		0		1	1	1		0  
+U7		0		0	0	0		0  
+U8		0		0	0	0		0  
+U9		0		1	1	1		1  
+U10		1		0	0	1		0  
 
-On voit que les tags StreetArt et Architecture sont fortement liés car ils sont quasiment toujours cochés ensemble. Pareil pour Nature, Paris et Fractals.
+On voit que les tags StreetArt et Architecture sont fortement liés car ils sont quasiment toujours cochés ensemble. Pareil pour Nature, Paris et Fractals.  
 Etant donné que StreetArt a le plus gros score, l'image à de grandes chances de représenter de l'architecture et du street art.
+
+## On considère une entreprise avec plusieurs sites web internes qui utilisent HTML et CSS. Votre objectif est de récupérer toutes les pages web de tous ces sites web internes afin de créer un répertoire centralisé. Vous avez accès à toutes les pages web (HTML et CSS), mais vous ne pouvez pas accéder aux bases de données utilisées par les sites web. Quelle est votre approche pour télécharger toutes les pages web ? Quels sont les inconvénients de votre approche? (1.5 points)
+
+Cela s'appelle du web crawling. Cela consiste à parcourir des pages internet automatiquement à l'aide d'un robot. L'inconvénient est que l'on se base 
+sur l'achitecture de la page. Si elle est amenée à changer (changement de nom de classe, ...) il faut mettre à jour le crawler.
+
+## Qu’est-ce qu’une base de données NoSQL? Quels sont les différents types de base de données NoSQL? Décrivez-les brièvement. (1 point)
+
+Base de données non relationnelles qui ne présente pas de contrainte de lien ce qui la rend bien plus rapide.  
+**Type 1 : Entrepôts clé-valeur (ECV)**  
+Les données sont stockées en clé-valeur : une clé plus un BLOB (dans lequel on peut mettre : nombre, date, texte, XML, photo, vidéo, structure objet).  
+**Type 2 : Bases orientées documents**  
+Ces bases de données stockent des données semi-structurées : le contenu est formaté JSON ou XML, mais la structure n'est pas contrainte.  
+**Type 3 : Bases orientées colonnes**  
+Ces bases de données se rapprochent des bases de données relationnelles, à ceci près qu'elles permettent de remplir un nombre de colonnes variable.  
+**Type 4 : Bases de données orientées graphes**  
+Ces bases de données, basées sur la théorie des graphes, sont gérées par noeuds, relations et propriétés. Elles gèrent des données spatiales, sociales ou financières (dépôts/retraits).
+
+## Le nettoyage de données est une étape importante avant de faire l’analyse de données. Pourquoi ? Quels sont les différents types d’erreurs ? Comment peut-on les résoudre? (1 point)
+
+Une préparation des données soignée permet une analyse plus efficace, limite les erreurs et imprécisions qui peuvent survenir lors du traitement des données et facilite l'accès des utilisateurs à l'intégralité des données traitées. Ces opérations sont facilitées par de nouveaux outils qui permettent aux utilisateurs de tout niveau technique de nettoyer et qualifier les données par leurs propres moyens.
+
+## Qu’est-ce que un réseau de neurones récurrents? Comment-est-il différent des autres approches de réseau de neurones artificiels? (1 point)
+
+https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents
+
+## Pour votre projet, nous vous avons demandé de créer un système de recommandation pour les images. Décrivez votre système en détaillant les différentes étapes, les algorithmes et l’architecture? Comparez votre travail avec le cycle de vie de données. Quelles sont les étapes vous avez utilisées et quelles sont les étapes manquantes ? (1 point)
+
+Récupération des données utilisateurs / traitement / affichage  
+Manque la préparation des données, traitement à plus grand échelle
