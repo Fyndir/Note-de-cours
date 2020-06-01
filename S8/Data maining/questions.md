@@ -40,20 +40,96 @@ KMeans, MiniBatchKMean, Perceptron, Multi-Layer Perceptron, Decision Tree, Rando
 
 ## Considérons un fichier CSV contenant les colonnes suivantes : photoId, ville, année et nombredevues. Ce fichier contient les informations détaillées sur les photos d’un site web de photographie. Votre objectif est de coder en Python (utilisation de la bibliothèque pandas préférable) un programme qui peut lire ce fichier CSV et calcule les valeurs suivantes :
 
+```py
+import pandas as pd
+import random as rd
+                                                            
+generatedViewScore = []
+for i in range(6):
+    generatedViewScore.append(rd.randint(0,100000))
+
+data = {
+    "PhotoId" : range(0,6),
+    "City" : ["Paris","Lyon","Lyon","Marseille","Paris","Paris"],
+    "Year" : ["2018","2018","2018","2015","2012","2012"],
+    "ViewNb" : generatedViewScore
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+```
 1. La photo la plus vue et la moins vue
 ```py
+# Most viewed photo
+
+# Sorted by Views Number
+sorted_df = df.sort_values(by=['ViewNb'],ascending=False)
+
+# Print the first row
+print(sorted_df.iloc[0])
+
+# Less viewed photo
+
+# Sorted by Views Number
+sorted_df = df.sort_values(by=['ViewNb'],ascending=True)
+
+# Print the first row
+print(sorted_df.iloc[0])
 ```
 
 2. La ville dans laquelle le plus grand nombre et le plus petit nombre de photos ont été prises
 ```py
+# City where the most photos has been taken and the less
+
+# We only need the city column
+city_df = df[['City']]
+
+# How many photos has been taken for each city
+grouped_df = city_df.groupby(['City']).size().reset_index(name='counts')
+
+# We sort them
+sorted_grouped_df = grouped_df.sort_values(by=['counts'],ascending=False)
+
+# We take the first and the last
+max_row = sorted_grouped_df.iloc[0][['City']]
+min_row = sorted_grouped_df.iloc[-1][['City']]
+
+print(max_row)
+print(min_row)
 ```
 
 3. L’année pendant laquelle le plus grand nombre de photos a été pris
 ```py
-```
+# Year where the most photo has been taken
 
+# We only need the year column
+year_df = df[['Year']]
+
+# How many photos has been taken every years
+grouped_df = year_df.groupby(['Year']).size().reset_index(name='counts')
+
+# We sort them
+sorted_grouped_df = grouped_df.sort_values(by=['counts'],ascending=False)
+
+# We take the first and the last
+max_year = sorted_grouped_df.iloc[0][['Year']]
+print(max_year)
+```
 4. Pour chaque ville, le nombre de vues moyenne sur l’année 2018
 ```py
+# Average views on 2018 for each city
+
+# We only keep data from 2018
+df_2018 = df[df['Year'] == '2018']
+
+# We only keep 'City' and 'ViewNb' 
+city_views_on_2018_df = df_2018[['City','ViewNb']]
+
+# We group by city and year
+grouped_df = city_views_on_2018_df.groupby(['City']).agg(['mean']).reset_index()
+print(grouped_df)
 ```
 
 ## Qu’est-ce qu’un réseau de neurones artificiel? (1 point)
