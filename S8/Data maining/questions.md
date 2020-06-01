@@ -1,6 +1,6 @@
 ## Quelles sont les différentes façons d’obtenir des données afin d’en faire l’analyse? (1 point)
 
-Génération des données ou collecte
+Génération des données ou collecte , les données des capteurs , les sondages 
 
 ## Les enquêtes en ligne sont actuellement utilisées pour récupérer les avis sur des projets et des produits. Néanmoins, nous trouvons encore des gens dans les supermarchés posant des questions ainsi que des enquêtes porte à porte. Pourquoi, à votre avis, ces enquêtes face à face sont toujours utilisées? (1 point)
 
