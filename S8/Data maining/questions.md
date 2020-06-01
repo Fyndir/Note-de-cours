@@ -182,7 +182,3 @@ Une préparation des données soignée permet une analyse plus efficace, limite 
 
 https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents
 
-## Pour votre projet, nous vous avons demandé de créer un système de recommandation pour les images. Décrivez votre système en détaillant les différentes étapes, les algorithmes et l’architecture? Comparez votre travail avec le cycle de vie de données. Quelles sont les étapes vous avez utilisées et quelles sont les étapes manquantes ? (1 point)
-
-Récupération des données utilisateurs / traitement / affichage  
-Manque la préparation des données, traitement à plus grand échelle
