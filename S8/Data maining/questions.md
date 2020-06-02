@@ -1,6 +1,10 @@
 ## Quelles sont les différentes façons d’obtenir des données afin d’en faire l’analyse? (1 point)
 
-Génération des données ou collecte , les données des capteurs , les sondages 
+* Surveys: Manual surveys,Online surveys
+* Sensors : Temperature, pressure, humidity, rainfall ,Acoustic, navigation ,Proximity, presence sensors
+* Social networks
+* Video surveillance cameras
+* Web
 
 ## Les enquêtes en ligne sont actuellement utilisées pour récupérer les avis sur des projets et des produits. Néanmoins, nous trouvons encore des gens dans les supermarchés posant des questions ainsi que des enquêtes porte à porte. Pourquoi, à votre avis, ces enquêtes face à face sont toujours utilisées? (1 point)
 
@@ -8,12 +12,24 @@ Les réactions des gens peuvent être différentes, ne touchent pas le même éc
 
 ## Quelles sont les contraintes ACID? Quelles contraintes sont assouplies par les bases de données NoSQL et pourquoi? (1 point)
 
-(Atomicité, Cohérence, Isolation, Durabilité) des transactions
-Les SGBD NoSQL assouplissent généralement une des contraintes parmis "Cohérence", "Isolation" et "Durabilité".
+* Atomicity: Each transaction must be "all or nothing".
+* Consistency: Any transaction must bring database from one valid state to another.
+* Isolation: Both concurrent execution and sequential execution of transactions must bring the database to same state.
+* Durability: Irrespective of power losses, crashes, a transaction once committed to the database must remain in that state.
+
+Many NoSQL stores compromise consistency (in the sense of the CAP theorem) in favor of availability, partition tolerance, and speed. 
 
 ## Quels sont les différents types de base de données NoSQL? Décrivez-les brièvement. (1 point)
 
-Clé/Valeur, Document, Graph, Column-oriented
+Base de données non relationnelles qui ne présente pas de contrainte de lien ce qui la rend bien plus rapide.  
+**Type 1 : Entrepôts clé-valeur (ECV)**  
+Les données sont stockées en clé-valeur : une clé plus un BLOB (dans lequel on peut mettre : nombre, date, texte, XML, photo, vidéo, structure objet).  
+**Type 2 : Bases orientées documents**  
+Ces bases de données stockent des données semi-structurées : le contenu est formaté JSON ou XML, mais la structure n'est pas contrainte.  
+**Type 3 : Bases orientées colonnes**  
+Ces bases de données se rapprochent des bases de données relationnelles, à ceci près qu'elles permettent de remplir un nombre de colonnes variable.  
+**Type 4 : Bases de données orientées graphes**  
+Ces bases de données, basées sur la théorie des graphes, sont gérées par noeuds, relations et propriétés. Elles gèrent des données spatiales, sociales ou financières (dépôts/retraits).
 
 ## Qu’est-ce que la visualisation de données ? Pourquoi les diverses méthodes de visualisation sont importantes ? Expliquez en donnant des exemples. (1 point)
 
@@ -142,17 +158,18 @@ Il est facile de détecter les fautes et de lui apprendre à ne pas les refaire.
 
 ## Un site web d’annotation a demandé à 10 utilisateurs de décrire une image en utilisant 5 hashtag (mot-diès). Vous trouverez ci-dessous une table détaillant les choix de hashtags des 10 utilisateurs. La table contient 5 colonnes et 10 lignes. Chaque ligne correspond à un utilisateur. Chaque colonne correspond à un hashtag; les valeurs dans la colonne contiennent soit 0 soit 1. Si la valeur est égale à 0, l’utilisateur n’a pas choisi ce hashtag, sinon la valeur est 1. Votre objectif est de trouver toutes les règles d’association dans cette table. Que pensez-vous de cette image. (1.5 points)
 
-Utilisateur	#Architecture	#Nature	#Paris	#StreetArt	#Fractals  
-U1		1		0	0	1		0  
-U2		1		1	1	1		1  
-U3		1		0	0	1		0  
-U4		1		1	1	1		1  
-U5		0		1	0	0		1  
-U6		0		1	1	1		0  
-U7		0		0	0	0		0  
-U8		0		0	0	0		0  
-U9		0		1	1	1		1  
-U10		1		0	0	1		0  
+| Utilisateur | #Architecture | #Nature\| | #Paris | #StreetArt | #Fractals |
+|-------------|---------------|-----------|--------|------------|-----------|
+| U1          | 1             | 0         | 0      | 1          | 0         |
+| U2          | 1             | 1         | 1      | 1          | 1         |
+| U3          | 1             | 0         | 0      | 1          | 0         |
+| U4          | 1             | 1         | 1      | 1          | 1         |
+| U5          | 0             | 1         | 0      | 0          | 1         |
+| U6          | 0             | 1         | 1      | 1          | 0         |
+| U7          | 0             | 0         | 0      | 0          | 0         |
+| U8          | 0             | 0         | 0      | 0          | 0         |
+| U9          | 0             | 1         | 1      | 1          | 1         |
+| U10         | 1             | 0         | 0      | 1          | 0         |
 
 On voit que les tags StreetArt et Architecture sont fortement liés car ils sont quasiment toujours cochés ensemble. Pareil pour Nature, Paris et Fractals.  
 Etant donné que StreetArt a le plus gros score, l'image à de grandes chances de représenter de l'architecture et du street art.
@@ -176,8 +193,34 @@ Ces bases de données, basées sur la théorie des graphes, sont gérées par no
 
 ## Le nettoyage de données est une étape importante avant de faire l’analyse de données. Pourquoi ? Quels sont les différents types d’erreurs ? Comment peut-on les résoudre? (1 point)
 
-Une préparation des données soignée permet une analyse plus efficace, limite les erreurs et imprécisions qui peuvent survenir lors du traitement des données et facilite l'accès des utilisateurs à l'intégralité des données traitées. Ces opérations sont facilitées par de nouveaux outils qui permettent aux utilisateurs de tout niveau technique de nettoyer et qualifier les données par leurs propres moyens.
+Une préparation des données soignée permet une analyse plus efficace, limite les erreurs et imprécisions qui peuvent survenir lors du traitement des données et facilite l'accès des utilisateurs à l'intégralité des données traitées.
 
+Type d'erreur lors du nettoyage de données :
+
+* Syntactical errors :
+    * Lexical errors (e.g., user entered a string instead of a number)
+    * Data format errors (e.g, order of last name, first name)
+    * Irregular data errors (e.g., usage of different metrics)
+* Semantical errors : 
+    * Violation of integrity constraints
+    * Contradiction
+    * Duplication
+    * Invalid data (unable to detect despite presence of triggers and integrity constraints)
+* Data coverage errors :
+    * missing values
+    * missing data
+
+Resoudre ces erreurs :
+
+* Handling Syntactical errors :
+    * Validation using schema (e.g., XSD, JSONP)
+    * Data transformation
+* Handling Semantic errors :
+    * Duplicate elimination using techniques like specifying integrity constraints like functional dependencies
+* Handling Coverage errors :
+    * Interpolation techniques
+    * External data sources
+    
 ## Qu’est-ce que un réseau de neurones récurrents? Comment-est-il différent des autres approches de réseau de neurones artificiels? (1 point)
 
 https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents
