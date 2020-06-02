@@ -220,10 +220,8 @@ Resoudre ces erreurs :
 * Handling Coverage errors :
     * Interpolation techniques
     * External data sources
-
+    
 ## Qu’est-ce que un réseau de neurones récurrents? Comment-est-il différent des autres approches de réseau de neurones artificiels? (1 point)
 
 https://fr.wikipedia.org/wiki/R%C3%A9seau_de_neurones_r%C3%A9currents
-
-slide 131 text mining
 
